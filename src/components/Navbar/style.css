@@ -1,0 +1,43 @@
+.logo {
+    width: 190px;
+    padding: 8px;
+}
+
+@media only screen and (max-width:800px) {
+    .nav-links {
+        display: inline-flex;
+    }
+  }
+
+.active-link {
+    background-color: black;
+    padding: 15px;
+    color: lightgray;
+}
+
+.active-link:hover {
+    background-color: black;
+    padding: 15px;
+    border-width: 0px;
+    color: lightgray;
+}
+
+.inactive-link {
+    background-color: rgb(24, 24, 24);
+    padding: 15px;
+    color: lightgray;
+}
+
+.inactive-link:hover {
+    background-color: black;
+    padding: 15px;
+    border-width: 0px;
+    color: lightgray;
+}
+
+.nav-background {
+    background-color: rgb(24, 24, 24);
+    opacity: 80%;
+    padding: 0px;
+    text-align: center;
+}
