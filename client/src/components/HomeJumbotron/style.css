@@ -1,0 +1,21 @@
+.jumbotron {
+    padding-top: 25px;
+    text-align: center;
+    background-color: unset;
+}
+
+.row {
+    padding-top: 25px;
+}
+
+.main-txt {
+    color: lightgray;
+}
+
+.lead {
+    font-weight: 500;
+}
+
+.my-4 {
+    background: lightgray;
+}

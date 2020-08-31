@@ -1,6 +1,7 @@
 import React from 'react'
 import './style.css'
-import videos from './dogEating.mp4'
+import videos from './assets/dogEating.mp4'
+import HomeJumbotron from '../components/HomeJumbotron'
 
 export default function index() {
     return (
@@ -14,6 +15,7 @@ export default function index() {
         </div>
         <div className="overlay">
         </div>
+        <HomeJumbotron />
         </main>
     )
 }
