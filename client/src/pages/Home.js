@@ -8,8 +8,8 @@ export default function index() {
         <main>
         <div className="video-container">
             
-            <video autoplay="autoplay" muted loop="loop" className="cover-video">
-                <source src={videos} type="video/mp4" onEnded/>
+            <video autoPlay="autoplay" muted loop="loop" className="cover-video">
+                <source src={videos} type="video/mp4" />
             </video>
             
         </div>
