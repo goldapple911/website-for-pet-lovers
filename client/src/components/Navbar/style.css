@@ -3,9 +3,15 @@
     padding: 8px;
 }
 
+.nav-item {
+    display: inline-block;
+}
+
 @media only screen and (max-width:800px) {
     .nav-links {
+        position: relative;
         display: inline-flex;
+        text-align: center;
     }
   }
 

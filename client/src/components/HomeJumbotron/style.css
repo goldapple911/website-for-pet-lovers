@@ -14,7 +14,6 @@
     position: relative;
     max-width: 1000px;
     margin: 0 auto;
-    
 }
 
 .row-overlay {
@@ -28,6 +27,13 @@
     border-radius: 25px;
     z-index: 0;
 }
+
+@media only screen and (max-width:800px) {
+    .top-row {
+        margin-top: 0px;
+        padding: 5px;
+    }
+  }
 
 .row {
     padding-top: 25px;
