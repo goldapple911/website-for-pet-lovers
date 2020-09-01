@@ -4,6 +4,18 @@
     background-color: unset;
 }
 
+.card:hover {
+    animation-name: cardHover;
+    animation-duration: .5s;
+    position: relative;
+}
+
+@keyframes cardHover {
+    0% {top: 0px}
+    25% {top: -20px}
+    100% {top: 0px}
+}
+
 .card-img-top {
     border-radius: 10px;
     background-color: unset;

@@ -1,7 +1,32 @@
 .jumbotron {
     padding-top: 25px;
-    text-align: center;
     background-color: unset;
+    text-align: center;
+}
+
+.top-row {
+    padding: 40px;
+    border-radius: 15px;
+    margin: 25px;
+}
+
+.wrapper {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    
+}
+
+.row-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    opacity: 70%;
+    border-radius: 25px;
+    z-index: 0;
 }
 
 .row {
@@ -9,7 +34,9 @@
 }
 
 .main-txt {
+    position: relative;
     color: lightgray;
+    z-index: 1;
 }
 
 .lead {
