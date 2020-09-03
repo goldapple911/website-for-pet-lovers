@@ -15,34 +15,35 @@ function NavTabs() {
         <nav>
             <div className="nav-background">
                 <div className="nav nav-links link-wrapper">
-                    <div className="col-md-4 left">
+                    <div className="col-md-4">
                         <img src={logo} alt="logo" className="logo" />
                     </div>
-                    <div className="custom-nav-links col-md-8 right">
-                            <Link
-                                to="/"
-                                className={location.pathname === "/" ? "nav-link active-link" : "nav-link inactive-link"}
-                            >
-                                Home
+                    <div className="col-md-8">
+                        <Link
+                            to="/"
+                            className={location.pathname === "/" ? "nav-link active-link" : "nav-link inactive-link"}
+                        >
+                            Home
                             </Link>
-                            <Link
-                                to="/ShopLocal"
-                                className={location.pathname === "/ShopLocal" ? "nav-link active-link" : "nav-link inactive-link"}
-                            >
-                                Shop Atlas
+                        <Link
+                            to="/ShopLocal"
+                            className={location.pathname === "/ShopLocal" ? "nav-link active-link" : "nav-link inactive-link"}
+                        >
+                            Shop Atlas
                             </Link>
-                            <Link
-                                to="/Contact"
-                                className={location.pathname === "/Contact" ? "nav-link active-link" : "nav-link inactive-link"}
-                            >
-                                Contact Us
+                        <Link
+                            to="/Contact"
+                            className={location.pathname === "/Contact" ? "nav-link active-link" : "nav-link inactive-link"}
+                        >
+                            Contact Us
                             </Link>
-                            <Link
-                                to="/Careers"
-                                className={location.pathname === "/Careers" ? "nav-link active-link" : "nav-link inactive-link"}
-                            >
-                                Careers
+                        <Link
+                            to="/Careers"
+                            className={location.pathname === "/Careers" ? "nav-link active-link" : "nav-link inactive-link"}
+                        >
+                            Careers
                             </Link>
+
                     </div>
                 </div>
             </div>

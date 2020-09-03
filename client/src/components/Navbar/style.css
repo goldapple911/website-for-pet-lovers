@@ -45,10 +45,16 @@
     text-align: center;
 }
 
-@media only screen and (max-width:800px) {
+@media only screen and (max-width:1000px) {
     .nav-links {
         position: relative;
         display: inline-flex;
         text-align: center;
+    }
+  }
+
+  @media only screen and (min-width:1000px) {
+    .link-wrapper {
+        min-width: 1000px;
     }
   }
