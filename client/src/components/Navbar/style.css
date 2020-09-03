@@ -13,13 +13,13 @@
 }
 
 .active-link {
-    background-color: black;
+    background-color: rgb(95, 95, 95);
     padding: 15px;
     color: lightgray;
 }
 
 .active-link:hover {
-    background-color: black;
+    background-color: rgb(95, 95, 95);
     padding: 15px;
     border-width: 0px;
     color: lightgray;
@@ -32,7 +32,7 @@
 }
 
 .inactive-link:hover {
-    background-color: black;
+    background-color: rgb(95, 95, 95);
     padding: 15px;
     border-width: 0px;
     color: lightgray;
