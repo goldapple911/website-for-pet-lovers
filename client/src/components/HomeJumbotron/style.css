@@ -1,5 +1,5 @@
 .jumbotron {
-    padding-top: 25px;
+    padding-top: 0px;
     background-color: unset;
     text-align: center;
 }
@@ -28,17 +28,6 @@
     z-index: 0;
 }
 
-@media only screen and (max-width:800px) {
-    .top-row {
-        margin-top: 0px;
-        padding: 5px;
-    }
-  }
-
-.row {
-    padding-top: 25px;
-}
-
 .main-txt {
     position: relative;
     color: lightgray;
@@ -52,3 +41,21 @@
 .my-4 {
     background: lightgray;
 }
+
+@media only screen and (max-width:800px) {
+    .jumbotron {
+        padding-top: 25px;
+    }
+    .top-row {
+        margin-top: 0px;
+        padding: 5px;
+    }
+  }
+  @media only screen and (min-width:1441px) {
+    .jumbotron {
+        padding-top: 6vh;
+    }
+    .top-row {
+        margin-bottom: 10vh;
+    }
+  }

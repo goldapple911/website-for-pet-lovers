@@ -1,6 +1,6 @@
 .card {
     border-style: unset;
-    margin-bottom: 25px;
+    
     background-color: unset;
 }
 
@@ -10,13 +10,25 @@
     position: relative;
 }
 
+.card-img-top {
+    border-radius: 10px;
+    background-color: unset;
+}
+
+@media only screen and (max-width:800px) {
+    .card {
+        margin-bottom: 25px;
+        position: relative;
+        display: inline-flex;
+        text-align: center;
+    }
+    .card:hover {
+        animation-name: unset;
+    }
+  }
+
 @keyframes cardHover {
     0% {top: 0px}
     25% {top: -20px}
     100% {top: 0px}
-}
-
-.card-img-top {
-    border-radius: 10px;
-    background-color: unset;
 }

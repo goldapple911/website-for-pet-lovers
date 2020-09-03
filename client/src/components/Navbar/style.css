@@ -3,17 +3,14 @@
     padding: 8px;
 }
 
-.nav-item {
-    display: inline-block;
+.link-wrapper {
+    max-width: 1000px;
+    display: inline-flex;
 }
 
-@media only screen and (max-width:800px) {
-    .nav-links {
-        position: relative;
-        display: inline-flex;
-        text-align: center;
-    }
-  }
+.nav-link {
+    display: inline-block;
+}
 
 .active-link {
     background-color: black;
@@ -47,3 +44,11 @@
     padding: 0px;
     text-align: center;
 }
+
+@media only screen and (max-width:800px) {
+    .nav-links {
+        position: relative;
+        display: inline-flex;
+        text-align: center;
+    }
+  }
