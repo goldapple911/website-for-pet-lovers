@@ -1,13 +1,11 @@
 import React from 'react'
-import dog from './assets/dogEating.mp4'
-import HomeJumbotron from '../components/HomeJumbotron'
+import video from './assets/dogEating.mp4'
 import Background from '../components/Background'
 
 export default function index() {
     return (
         <main>
-        <Background src={dog}/>
-        <HomeJumbotron />
+        <Background src={video}/>
         </main>
     )
 }

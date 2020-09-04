@@ -26,8 +26,8 @@ function NavTabs() {
                             Home
                             </Link>
                         <Link
-                            to="/ShopLocal"
-                            className={location.pathname === "/ShopLocal" ? "nav-link active-link" : "nav-link inactive-link"}
+                            to="/Shop-Local"
+                            className={location.pathname === "/Shop-Local" ? "nav-link active-link" : "nav-link inactive-link"}
                         >
                             Shop Atlas
                             </Link>
