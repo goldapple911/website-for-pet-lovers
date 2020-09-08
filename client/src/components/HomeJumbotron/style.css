@@ -1,7 +1,9 @@
 .jumbotron {
+    position: relative;
     padding-top: 0px;
     background-color: unset;
     text-align: center;
+    z-index: -1;
 }
 
 .top-row {

@@ -3,7 +3,7 @@
     padding: 8px;
 }
 
-.link-wrapper {
+.nav-wrapper {
     max-width: 1000px;
     display: inline-flex;
 }
@@ -40,9 +40,32 @@
 
 .nav-background {
     background-color: rgb(24, 24, 24);
-    opacity: 80%;
     padding: 0px;
     text-align: center;
+}
+
+.dropdown {
+    position: absolute;
+    display: none;
+    left: 0px;
+    background-color: rgb(95, 95, 95);
+    width: 100%;
+    margin: 0px;
+    z-index: 1;
+}
+
+.d-down {
+    position: relative;
+}
+
+.d-down:hover > .dropdown {
+    display: block;
+}
+
+.dropdown-link {
+    color: lightgray;
+    display: block;
+    padding: 15px;
 }
 
 @media only screen and (max-width:1000px) {
