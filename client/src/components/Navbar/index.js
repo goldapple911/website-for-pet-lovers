@@ -26,7 +26,7 @@ function NavTabs() {
                             Home
                             </Link>
 
-                        <div className={"nav-link inactive-link d-down"}>
+                        <div className={location.pathname === "/Shop-Local" ? "nav-link active-link d-down" :"nav-link inactive-link d-down"}>
                             Shop Atlas
                             <div className="dropdown">
                                 <a className="dropdown-link" href="/Shop-Local">In Store</a>

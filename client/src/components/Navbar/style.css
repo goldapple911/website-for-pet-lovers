@@ -60,6 +60,17 @@
 
 .d-down:hover > .dropdown {
     display: block;
+    animation-name: dd;
+    animation-duration: .25s;
+}
+
+@keyframes dd {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
 }
 
 .dropdown-link {
