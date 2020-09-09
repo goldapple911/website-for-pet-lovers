@@ -2,7 +2,9 @@
     background-color: unset;
     text-align: center;
     padding: 0px;
-    margin-top: 25px;
+    margin: 25px;
+    margin-left: 5px;
+    /* margin-bottom: 0px; */
 }
 
 .form {
