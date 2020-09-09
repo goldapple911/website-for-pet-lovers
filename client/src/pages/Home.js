@@ -4,6 +4,7 @@ import HomeJumbotron from '../components/HomeJumbotron'
 import Background from '../components/Background'
 
 export default function index() {
+
     return (
         <main>
         <Background src={dog}/>

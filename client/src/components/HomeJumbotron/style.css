@@ -4,7 +4,7 @@
     padding-top: 0px;
     background-color: unset;
     text-align: center;
-    z-index: -1;
+    z-index: 0;
 }
 
 .top-row {

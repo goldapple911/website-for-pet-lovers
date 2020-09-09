@@ -18,7 +18,7 @@ function ContactForm() {
                     <br />
                     <label htmlFor="message">Message</label>
                     <textarea className="inputs" rows="6" id="message" name="message"></textarea>
-                    <input type="submit" value="Send Message"></input>
+                    <input className="submit-btn" type="submit" value="Send Message"></input>
                 </form>
                 <div className="row-overlay"></div>
         </div>
