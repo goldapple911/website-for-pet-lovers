@@ -24,13 +24,13 @@ export default function index() {
                     <CategoryCard src={mammal} alt={"Small Mammal"} category={"Small Mammal"} />
                 </div>
                 <div className="col-md-4 shop-card">
-                    <CategoryCard src={bird} alt={"Birds"} category={"Bird"} />
+                    <CategoryCard src={bird} alt={"Bird"} category={"Bird"} />
                 </div>
                 <div className="col-md-4 shop-card">
-                    <CategoryCard src={reptile} alt={"Reptiles"} category={"Reptile"} />
+                    <CategoryCard src={reptile} alt={"Reptile"} category={"Reptile"} />
                 </div>
                 <div className="col-md-4 shop-card">
-                    <CategoryCard src={aquatics} alt={"Aquatics"} category={"Aquatic"} />
+                    <CategoryCard src={aquatics} alt={"Aquatic"} category={"Aquatic"} />
                 </div>
             </div>
         </main>
