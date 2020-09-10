@@ -1,8 +1,16 @@
-import React from "react";
+import React, { createContext, useState } from "react";
 
-const ClientContext = React.createContext({
-  categorySelection: "",
-  currentUser: ""
-});
+export const ClientContext = createContext();
 
-export default ClientContext;
+const ClientContextProvider = (props) => {
+  const [category, setCategory] = useState("initialState")
+  const [currentUser, setCurrentUser] = useState("initialUserState")
+
+  return (
+    <ClientContext.Provider value={{ category, currentUser }}>
+      {props.children}
+    </ClientContext.Provider>
+  );
+}
+
+export default ClientContextProvider;

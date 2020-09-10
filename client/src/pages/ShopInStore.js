@@ -2,15 +2,9 @@ import React from 'react';
 import video from './assets/dogEating.mp4';
 import Background from '../components/Background';
 import CategoryCard from '../components/CategoryCard';
-import dog from '../components/HomeJumbotron/assets/dog.jpg';
-import cat from '../components/HomeJumbotron/assets/cat.jpg';
-import mammal from '../components/HomeJumbotron/assets/mammal.jpg';
-import bird from '../components/HomeJumbotron/assets/bird.jpg';
-import reptile from '../components/HomeJumbotron/assets/reptile.jpg';
-import aquatics from '../components/HomeJumbotron/assets/aquatics.jpg';
 import websiteData from "../utils/SiteData"
 
-export default function index() {
+export default function ShopInStore() {
     // Shortened for ease of use
     const dataset = websiteData.petCategories
 

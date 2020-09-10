@@ -1,5 +1,5 @@
 import React from "react";
-import "./style.css"
+import "./style.css";
 
 function CategoryCard({ src, alt }) {
     return (
@@ -10,6 +10,5 @@ function CategoryCard({ src, alt }) {
         </div>
     )
 }
-
 
 export default CategoryCard;
