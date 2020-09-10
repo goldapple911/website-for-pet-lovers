@@ -1,12 +1,5 @@
 import React from "react";
 import "./style.css";
-import CategoryCard from "../CategoryCard";
-import dog from "./assets/dog.jpg";
-import cat from "./assets/cat.jpg";
-import mammal from "./assets/mammal.jpg";
-import bird from "./assets/bird.jpg";
-import reptile from "./assets/reptile.jpg";
-import aquatics from "./assets/aquatics.jpg";
 
 function HomeJumbotron() {
 
@@ -20,29 +13,8 @@ function HomeJumbotron() {
                 </div>
                 <div className="row-overlay"></div>
             </div>
-            <div className="row">
-                <div className="col-md-2">
-                    <CategoryCard src={dog} alt={"Dog"} category={"Dog"} />
-                </div>
-                <div className="col-md-2">
-                    <CategoryCard src={cat} alt={"Cat"} category={"Cat"} />
-                </div>
-                <div className="col-md-2">
-                    <CategoryCard src={mammal} alt={"Small Mammal"} category={"Small Mammal"} />
-                </div>
-                <div className="col-md-2">
-                    <CategoryCard src={bird} alt={"Birds"} category={"Bird"} />
-                </div>
-                <div className="col-md-2">
-                    <CategoryCard src={reptile} alt={"Reptiles"} category={"Reptile"} />
-                </div>
-                <div className="col-md-2">
-                    <CategoryCard src={aquatics} alt={"Aquatics"} category={"Aquatic"} />
-                </div>
-            </div>
         </div>
     )
 }
-
 
 export default HomeJumbotron;

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './App.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import NavTabs from "./components/Navbar";
 import Home from "./pages/Home";
@@ -34,7 +35,7 @@ function App() {
           <Route exact path="/" render={ () => <Home checkCategorySelection={checkCategorySelection} setCategory={setCategory} /> } />
           <Route exact path="/Contact" component={Contact} />
           <Route exact path="/Careers" component={Careers} />
-          <Route exact path="/Shop-Local" component={ShopInStore} />
+          <Route exact path="/Shop-Local" render={ () => <ShopInStore checkCategorySelection={checkCategorySelection} setCategory={setCategory} /> } />
           <Route exact path="/Shop-Category" render={ () => <ShopByCategory checkCategorySelection={checkCategorySelection} setCategory={setCategory} /> } />
         </ClientContext.Provider>
       </div>

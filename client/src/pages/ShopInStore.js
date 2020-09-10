@@ -8,30 +8,25 @@ import mammal from '../components/HomeJumbotron/assets/mammal.jpg';
 import bird from '../components/HomeJumbotron/assets/bird.jpg';
 import reptile from '../components/HomeJumbotron/assets/reptile.jpg';
 import aquatics from '../components/HomeJumbotron/assets/aquatics.jpg';
+import websiteData from "../utils/SiteData"
 
 export default function index() {
+    // Shortened for ease of use
+    const dataset = websiteData.petCategories
+
     return (
         <main>
-        <Background src={video}/>
-        <div className="row categories">
-                <div className="col-md-4 shop-card">
-                    <CategoryCard src={dog} alt={"Dog"} category={"Dog"} />
-                </div>
-                <div className="col-md-4 shop-card">
-                    <CategoryCard src={cat} alt={"Cat"} category={"Cat"} />
-                </div>
-                <div className="col-md-4 shop-card">
-                    <CategoryCard src={mammal} alt={"Small Mammal"} category={"Small Mammal"} />
-                </div>
-                <div className="col-md-4 shop-card">
-                    <CategoryCard src={bird} alt={"Bird"} category={"Bird"} />
-                </div>
-                <div className="col-md-4 shop-card">
-                    <CategoryCard src={reptile} alt={"Reptile"} category={"Reptile"} />
-                </div>
-                <div className="col-md-4 shop-card">
-                    <CategoryCard src={aquatics} alt={"Aquatic"} category={"Aquatic"} />
-                </div>
+            <Background src={video} />
+            <div className="row categories">
+                {dataset.map((data) => (
+                    <div className="col-md-4 shop-card" key={data.id}>
+                    <CategoryCard
+                        src={data.link}
+                        alt={data.category}
+                        category={data.category}
+                    />
+                    </div>
+                ))}
             </div>
         </main>
     )
