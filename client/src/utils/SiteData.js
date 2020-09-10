@@ -1,22 +1,40 @@
 export const websiteData = {
     petcategories: [
         {
-            animal: "Dog"
+            category: "Dog",
+            description: "this is a test dog description",
+            brandExamples: ["these", "are", "brand", "examples"],
+            onlineShopURL: "https://shop.atlaspet.net/products/list/?categories=0003"
         },
         {
-            animal: "Cat"
+            category: "Cat",
+            description: "",
+            brandExamples: "",
+            onlineShopURL: ""
         },
         {
-            animal: "Small Mammal"
+            category: "Small Mammal",
+            description: "",
+            brandExamples: "",
+            onlineShopURL: ""
         },
         {
-            animal: "Bird"
+            category: "Bird",
+            description: "",
+            brandExamples: "",
+            onlineShopURL: ""
         },
         {
-            animal: "Reptile"
+            category: "Reptile",
+            description: "",
+            brandExamples: "",
+            onlineShopURL: ""
         },
         {
-            animal: "Aquatic"
+            category: "Aquatic",
+            description: "",
+            brandExamples: "",
+            onlineShopURL: ""
         }
     ]
 }

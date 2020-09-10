@@ -7,7 +7,7 @@ import axios from "axios";
 
 // import { get } from "mongoose"
 
-function NavTabs() {
+function NavTabs({ checkSelection, setCategory }) {
 
     const location = useLocation();
 
@@ -47,10 +47,10 @@ function NavTabs() {
                         >
                             Careers
                             </Link>
-
-                    </div>
-                </div>
-            </div>
+                            
+                    </div>    
+                </div>      
+            </div>       
         </nav>
     )
 }

@@ -24,3 +24,8 @@
     animation-name: swoop-in;
     animation-duration: 1s;
 }
+
+/* Contact Us Page */
+.contact-form {
+    margin: 0 auto;
+}
