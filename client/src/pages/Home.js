@@ -3,14 +3,15 @@ import dogvid from './assets/dogEating.mp4'
 import HomeJumbotron from '../components/HomeJumbotron'
 import Background from '../components/Background'
 import CategoryCard from "../components/CategoryCard";
-import websiteData from "../utils/SiteData"
-import { ClientContext } from "../utils/ClientContext"
+import websiteData from "../utils/SiteData";
+import { ClientContext } from "../utils/ClientContext";
 
 export default function Home() {
     const context = useContext(ClientContext)
-    console.log(context)
     // Shortened for ease of use
     const dataset = websiteData.petCategories
+
+    console.log(context.clientState)
 
     return (
         <main>

@@ -3,9 +3,6 @@ import { Link, useLocation } from "react-router-dom"
 import "../../pages/style.css"
 import logo from "../../pages/assets/logo.png"
 import "./style.css"
-import axios from "axios";
-
-// import { get } from "mongoose"
 
 function NavTabs({ checkSelection, setCategory }) {
 
@@ -16,7 +13,7 @@ function NavTabs({ checkSelection, setCategory }) {
             <div className="nav-background">
                 <div className="nav nav-links nav-wrapper">
                     <div className="col-md-4">
-                        <a href="/"><img src={logo} alt="logo" className="logo" /></a>
+                        <Link to="/"><img src={logo} alt="logo" className="logo" /></Link>
                     </div>
                     <div className="col-md-8">
                         <Link
