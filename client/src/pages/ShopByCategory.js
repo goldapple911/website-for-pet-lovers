@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
-import CategoryCard from '../components/CategoryCard';
+import SingleCard from '../components/SingleCard';
 import websiteData from "../utils/SiteData";
 import { ClientContext } from "../utils/ClientContext";
 import Background from '../components/Background';
 import dogvid from './assets/dogEating.mp4';
+import CategoryJumbotron from '../components/CategoryJumbotron';
+import "./pages.css"
 
 export default function ShopByCategory() {
     let history = useHistory();
@@ -29,16 +31,20 @@ export default function ShopByCategory() {
     }
 
     return (
-        <div>
-            <Background src={dogvid} />
-            <div className="col-md-4">
+        <main className="hide-overflow">
+            <Background />
+            <div className="row">
+                <div className="col-md-3 single-card">
 
-                <CategoryCard
-                    src={link}
-                    alt={category}
-                // category={state.category}
-                />
+                    <SingleCard
+                        src={link}
+                        alt={category}
+                    />
+                </div>
+                <div className="col-md-9 single-card">
+                    <CategoryJumbotron />
+                </div>
             </div>
-        </div>
+        </main>
     )
 }

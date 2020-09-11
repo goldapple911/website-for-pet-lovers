@@ -5,6 +5,7 @@ import Background from '../components/Background'
 import CategoryCard from "../components/CategoryCard";
 import websiteData from "../utils/SiteData";
 import { ClientContext } from "../utils/ClientContext";
+import "./pages.css"
 
 export default function Home() {
     const context = useContext(ClientContext)
@@ -14,7 +15,7 @@ export default function Home() {
     console.log(context.clientState)
 
     return (
-        <main>
+        <main className="hide-overflow">
             <Background src={dogvid} />
             <HomeJumbotron />
 

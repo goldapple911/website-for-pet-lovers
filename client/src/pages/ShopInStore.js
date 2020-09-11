@@ -3,6 +3,7 @@ import video from './assets/dogEating.mp4';
 import Background from '../components/Background';
 import CategoryCard from '../components/CategoryCard';
 import websiteData from "../utils/SiteData"
+import "./pages.css"
 
 export default function ShopInStore() {
     // Shortened for ease of use

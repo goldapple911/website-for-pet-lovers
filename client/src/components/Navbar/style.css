@@ -51,7 +51,7 @@
     background-color: rgb(95, 95, 95);
     width: 100%;
     margin: 0px;
-    z-index: 1;
+    z-index: 10;
 }
 
 .d-down {
