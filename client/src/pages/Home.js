@@ -24,7 +24,7 @@ export default function Home() {
                     <CategoryCard
                         src={data.link}
                         alt={data.category}
-                        category={data.category}
+                        // category={data.category}
                     />
                     </div>
                 ))}
