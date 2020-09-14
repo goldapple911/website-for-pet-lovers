@@ -4,7 +4,7 @@ import "./style.css";
 function SingleCard({ src, alt }) {
 
     return (
-        <div className="card single-card">
+        <div className="single-card">
                 <img className="card-img-top single-card"
                     src={src}
                     alt={alt}

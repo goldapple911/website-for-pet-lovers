@@ -4,7 +4,6 @@ import SingleCard from '../components/SingleCard';
 import websiteData from "../utils/SiteData";
 import { ClientContext } from "../utils/ClientContext";
 import Background from '../components/Background';
-import dogvid from './assets/dogEating.mp4';
 import CategoryJumbotron from '../components/CategoryJumbotron';
 import "./pages.css"
 
