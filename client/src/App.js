@@ -18,8 +18,8 @@ function App() {
           <Route exact path="/" render={() => <Home />} />
           <Route exact path="/Contact" component={Contact} />
           <Route exact path="/Careers" component={Careers} />
-          <Route exact path="/Shop-Local" render={() => <ShopInStore />} />
-          <Route exact path="/Shop-Category" render={() => <ShopByCategory />} />
+          <Route exact path="/Shop-Local" component={ShopInStore} />
+          <Route exact path="/Shop-Category" component={ShopByCategory} />
         </ClientContextProvider>
       </div>
     </Router>

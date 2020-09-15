@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "./style.css";
 
 function ContactForm() {
@@ -10,18 +11,25 @@ function ContactForm() {
 
     function sendEmail(e) {
         e.preventDefault();
-        fetch("/send",
-            {
-                method: "POST",
-                body: formData,
-            })
-            .then(() => {
+        console.log(formData)
+        axios.post("/send", formData)
+        .then(res => {
+            console.log(res)
+            console.log(res.data)
+        })
+
+        // fetch("http://localhost:3001/Send",
+        //     {
+        //         method: "POST",
+        //         body: formData,
+        //     })
+        //     .then(() => {
                 // $("#send-msg").addClass("send-confirmation");
                 // setTimeout(() => {
                 //     $("#send-msg").removeClass("send-confirmation");
                 // }, 3000);
-            })
-            .catch(err => console.log(err))
+            // })
+            // .catch(err => console.log(err))
     };
 
     function checkStateChange(e) {
