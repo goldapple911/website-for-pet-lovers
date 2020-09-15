@@ -5,7 +5,7 @@ import websiteData from "../utils/SiteData";
 import { ClientContext } from "../utils/ClientContext";
 import Background from '../components/Background';
 import CategoryJumbotron from '../components/CategoryJumbotron';
-import "./pages.css"
+import "./style.css"
 
 export default function ShopByCategory() {
     let history = useHistory();

@@ -3,7 +3,7 @@ import video from './assets/dogEating.mp4';
 import Background from '../components/Background';
 import CategoryCard from '../components/CategoryCard';
 import websiteData from "../utils/SiteData"
-import "./pages.css"
+import "./style.css"
 
 export default function ShopInStore() {
     // Shortened for ease of use
@@ -11,7 +11,7 @@ export default function ShopInStore() {
 
     return (
         <main>
-            <Background src={video} />
+            <Background />
             <div className="row categories">
                 {dataset.map((data) => (
                     <div className="col-md-4 shop-card" key={data.id}>

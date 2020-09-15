@@ -1,9 +1,9 @@
-import dog from "../components/HomeJumbotron/assets/dog.jpg";
-import cat from "../components/HomeJumbotron/assets/cat.jpg";
-import mammal from "../components/HomeJumbotron/assets/mammal.jpg";
-import bird from "../components/HomeJumbotron/assets/bird.jpg";
-import reptile from "../components/HomeJumbotron/assets/reptile.jpg";
-import aquatics from "../components/HomeJumbotron/assets/aquatics.jpg";
+import dog from "./Assets/dog.jpg";
+import cat from "./Assets/cat.jpg";
+import mammal from "./Assets/mammal.jpg";
+import bird from "./Assets/bird.jpg";
+import reptile from "./Assets/reptile.jpg";
+import aquatics from "./Assets/aquatics.jpg";
 
 export default {
     petCategories: [

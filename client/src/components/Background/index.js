@@ -15,5 +15,4 @@ function Background({ src }) {
     )
 }
 
-
 export default Background;
