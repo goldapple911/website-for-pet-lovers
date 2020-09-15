@@ -11,30 +11,11 @@ function ContactForm() {
 
     function sendEmail(e) {
         e.preventDefault();
-        console.log(formData)
         axios.post("/send", formData)
         .then(res => {
             console.log(res)
             console.log(res.data)
         })
-
-        // fetch("http://localhost:3001/Send",
-        //     {
-        //         method: "POST",
-        //         body: formData,
-        //     })
-        //     .then(() => {
-                // $("#send-msg").addClass("send-confirmation");
-                // setTimeout(() => {
-                //     $("#send-msg").removeClass("send-confirmation");
-                // }, 3000);
-            // })
-            // .catch(err => console.log(err))
-    };
-
-    function checkStateChange(e) {
-        e.preventDefault()
-        console.log(formData)
     };
 
     function handleNameChange(e) {

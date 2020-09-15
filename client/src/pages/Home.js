@@ -12,8 +12,6 @@ export default function Home() {
     // Shortened for ease of use
     const dataset = websiteData.petCategories
 
-    console.log(context.clientState)
-
     return (
         <main className="hide-overflow">
             <Background src={dogvid} />

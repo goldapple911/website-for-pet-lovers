@@ -18,11 +18,9 @@ export default function ShopByCategory() {
         for (let i = 0; i < dataset.length; i++) {
             if (dataset[i].category === clientState.category) {
                 setLink(dataset[i].link);
-                console.log(dataset[i].category)
                 setCategory(dataset[i].category);
             }
         }
-        console.log(category)
     })
 
     if (clientState.category === "Category State Unset") {

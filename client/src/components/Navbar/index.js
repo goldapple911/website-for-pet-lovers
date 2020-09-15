@@ -32,7 +32,6 @@ function NavTabs({ checkSelection, setCategory }) {
                                 >
                                     In Store
                                 </Link>
-                                {/* <a className="dropdown-link" href="/Shop-Local">In Store</a> */}
                                 <a className="dropdown-link" href="https://shop.atlaspet.net/products/list/" target="_blank">Online</a>
                             </div>
                         </div>
