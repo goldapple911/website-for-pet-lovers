@@ -17,8 +17,8 @@ function App() {
           <NavTabs />
           <Route exact path="/" render={() => <Home />} />
           <Route exact path="/Contact" component={Contact} />
-          <Route exact path="/Careers" component={Careers} />
           <Route exact path="/Shop-Local" component={ShopInStore} />
+          <Route exact path="/Careers" component={Careers} />
           <Route exact path="/Shop-Category" component={ShopByCategory} />
         </ClientContextProvider>
       </div>

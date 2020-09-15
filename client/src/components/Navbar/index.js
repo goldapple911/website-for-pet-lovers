@@ -23,10 +23,16 @@ function NavTabs({ checkSelection, setCategory }) {
                             Home
                             </Link>
 
-                        <div className={location.pathname === "/Shop-Local" ? "nav-link active-link d-down" :"nav-link inactive-link d-down"}>
+                        <div className={location.pathname === "/Shop-Local" ? "nav-link active-link d-down" : "nav-link inactive-link d-down"}>
                             Shop Atlas
                             <div className="dropdown">
-                                <a className="dropdown-link" href="/Shop-Local">In Store</a>
+                                <Link
+                                    to="/Shop-Local"
+                                    className="dropdown-link"
+                                >
+                                    In Store
+                                </Link>
+                                {/* <a className="dropdown-link" href="/Shop-Local">In Store</a> */}
                                 <a className="dropdown-link" href="https://shop.atlaspet.net/products/list/" target="_blank">Online</a>
                             </div>
                         </div>
@@ -44,10 +50,10 @@ function NavTabs({ checkSelection, setCategory }) {
                         >
                             Careers
                             </Link>
-                            
-                    </div>    
-                </div>      
-            </div>       
+
+                    </div>
+                </div>
+            </div>
         </nav>
     )
 }
