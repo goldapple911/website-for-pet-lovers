@@ -18,7 +18,7 @@ export default function ShopInStore() {
                     <CategoryCard
                         src={data.link}
                         alt={data.category}
-                        category={data.category}
+                        // category={data.category}
                     />
                     </div>
                 ))}
