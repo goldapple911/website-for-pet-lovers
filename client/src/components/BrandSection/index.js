@@ -1,6 +1,5 @@
 import React from 'react';
 import "./style.css";
-import { v4 as uuidv4 } from 'uuid';
 
 export default function index({ brands }) {
     console.log(brands)

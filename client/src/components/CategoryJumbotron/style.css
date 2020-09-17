@@ -25,6 +25,7 @@
     text-align: center;
 }
 
-.test {
+.p-spacing {
     margin-top: 20px;
+    line-height: normal;
 }

@@ -10,7 +10,7 @@ function CategoryJumbotron({ title, description }) {
                 <h1 className="display-4 main-txt category-title"><strong>{title}</strong></h1>
                 <hr className="my-4" />
                 {description.map((desc) => (
-                    <p className="lead main-txt test" key={uuidv4()}>
+                    <p className="lead main-txt p-spacing" key={uuidv4()}>
                         {desc}
                     </p>
                 ))}
