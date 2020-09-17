@@ -10,7 +10,6 @@ import ClientContextProvider from './utils/ClientContext';
 
 
 function App() {
-  Router.refresh();
   return (
     <Router>
       <div className="App">

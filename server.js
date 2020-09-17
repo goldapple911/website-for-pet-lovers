@@ -13,8 +13,12 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+// app.get('/*', function (req, res) {
+//   res.sendFile('client/public/index.html')
+// });
+
 app.get('/*', function (req, res) {
-  res.sendFile('client/public/index.html')
+  res.redirect('/')
 });
 
 // Haven't created a database to connect yet 
