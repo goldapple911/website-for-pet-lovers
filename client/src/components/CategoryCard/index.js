@@ -8,7 +8,7 @@ function CategoryCard({ src, alt }) {
     const context = useContext(ClientContext)
 
     return (
-        <div className="card">
+        <div className="card card-anim">
 
             <Link to="/Shop-Category" >
                 <img className="card-img-top"

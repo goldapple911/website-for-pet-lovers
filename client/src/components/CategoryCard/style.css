@@ -3,7 +3,7 @@
     background-color: unset;
 }
 
-.card:hover {
+.card-anim:hover {
     animation-name: cardHover;
     animation-duration: .5s;
     position: relative;
@@ -21,7 +21,7 @@
         display: inline-flex;
         text-align: center;
     }
-    .card:hover {
+    .card-anim:hover {
         animation-name: unset;
     }
   }

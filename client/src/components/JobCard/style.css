@@ -1,0 +1,32 @@
+.job-card {
+    background-color: rgb(41, 41, 41);
+    margin-top: 25px;
+    border-radius: 10px;
+    color: lightgray;
+}
+
+.job-title {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.job-text {
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+.hr {
+    width: 100%;
+    height: 1px;
+    background-color: lightgray;
+    margin: 0 auto;
+}
+
+.job-row {
+    
+}
+
+.section-title {
+    margin: 0 auto;
+}
+

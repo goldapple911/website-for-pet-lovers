@@ -21,6 +21,9 @@ export default function Careers() {
         <main className="hide-overflow">
             <Background />
             <div className="col-md-6">
+                <div className="row job-row">
+                    <h1 className="section-title">Available Positions</h1>
+                </div>
                 <JobCard
                     jobs={jobs}
                 />
