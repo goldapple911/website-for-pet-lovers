@@ -1,5 +1,4 @@
 import React from 'react';
-import video from './assets/dogEating.mp4';
 import Background from '../components/Background';
 import CategoryCard from '../components/CategoryCard';
 import websiteData from "../utils/SiteData"
@@ -10,7 +9,7 @@ export default function ShopInStore() {
     const dataset = websiteData.petCategories
 
     return (
-        <main>
+        <main className="hide-overflow">
             <Background />
             <div className="row categories">
                 {dataset.map((data) => (

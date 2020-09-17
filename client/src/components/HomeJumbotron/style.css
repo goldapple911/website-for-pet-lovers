@@ -10,29 +10,18 @@
 .top-row {
     padding: 40px;
     border-radius: 15px;
-    margin: 25px;
+    margin: 20px;
 }
 
 .wrapper {
     position: relative;
-    max-width: 1000px;
+    max-width: 750px;
     margin: 0 auto;
-}
-
-.row-overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: black;
-    opacity: 70%;
-    border-radius: 25px;
-    z-index: 0;
 }
 
 .main-txt {
     position: relative;
+    line-height: 33px;
     color: lightgray;
     z-index: 1;
 }
@@ -42,7 +31,7 @@
 }
 
 .my-4 {
-    background: lightgray;
+    background: lightgray;  
 }
 
 @media only screen and (max-width:800px) {

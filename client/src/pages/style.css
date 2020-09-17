@@ -1,3 +1,24 @@
+.top {
+    background-color: rgb(41, 41, 41);
+    /* margin-top: 20px; */
+    /* padding-bottom: 25px; */
+}
+
+.bottom {
+    background-color: rgb(41, 41, 41);
+}
+
+.row-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(41, 41, 41);
+    border-radius: 25px;
+    z-index: 0;
+}
+
 /* Shop in store page */
 .shop-card {
     padding: 20px;
@@ -23,7 +44,7 @@
 }
 
 .categories {
-    width: 70%;
+    width: 65%;
     margin: 0 auto;
     animation-name: swoop-in;
     animation-duration: 1s;

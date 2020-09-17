@@ -1,16 +1,28 @@
 import React from "react";
 import "./style.css";
+import { v4 as uuidv4 } from 'uuid';
 
-function CategoryJumbotron() {
-
+function CategoryJumbotron({ title, description }) {
+    console.log(description)
     return (
         <div>
-                <div className="category-text-section">
-                    <h1 className="display-4 main-txt"><strong>We Know Animals</strong></h1>
-                    <hr className="my-4" />
-                    <p className="lead main-txt">Atlas Pet was built on a passion for animals of all shapes. For more than 30 years we have worked hard to keep competitive prices and we pride ourselves on our friendly and knowledgeable staff. So whether you've been stopping in for years, or today is your first visit, we're ready to bring you our best. </p>
+            <div className="category-text-section row">
+                <h1 className="display-4 main-txt category-title"><strong>{title}</strong></h1>
+                <hr className="my-4" />
+                {description.map((desc) => (
+                    <p className="lead main-txt test" key={uuidv4()}>
+                        {desc}
+                    </p>
+                ))}
+            </div>
+            <div className="row button-row">
+                <div className="col-md-6 txt-center">
+                    <button className="button">Shop Online</button>
                 </div>
-                <div className="full-overlay"></div>
+                <div className="col-md-6 txt-center">
+                    <button className="button">Shop Online</button>
+                </div>
+            </div>
         </div>
     )
 }

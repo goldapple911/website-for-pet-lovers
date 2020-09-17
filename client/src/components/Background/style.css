@@ -1,28 +1,5 @@
-/* Homepage */
-
-.video-container {
-    height: 100vh;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: -2;
-}
-
-.overlay {
-    height: 100vh;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: -1;
-    background-color: darkslategray;
-    /* opacity: 75%; */
-}
-
-.cover-video {
-    min-width: 100%;
-    min-height: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+.bg-image {
+    background-image: url("../../utils/Assets/background-image.jpg");
+    background-position: center;
+    background-size: cover;
 }

@@ -1,16 +1,30 @@
-.category-text-section {
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
+.row {
+    position: relative;
 }
 
-.full-overlay {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: black;
-    opacity: 70%;
-    z-index: -1;
+.button-row {
+    margin-bottom: 25px;
+}
+
+.category-title {
+    font-size: 48px;
+    text-align: center;
+}
+
+.category-text-section {
+    font-size: 16px;
+    padding: 25px;
+    padding-bottom: 5px;
+    border-radius: 15px;
+    background-color: rgb(41, 41, 41);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.txt-center {
+    text-align: center;
+}
+
+.test {
+    margin-top: 20px;
 }
