@@ -14,13 +14,13 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Catch all route to allow React to function on page
-// app.get('/*', function(req, res) {
-//   res.sendFile(path.join(__dirname, '/client/public/index.html'), function(err) {
-//     if (err) {
-//       res.status(500).send(err)
-//     }
-//   })
-// })
+app.get('*', function(req, res) {
+  res.sendFile(path.join(__dirname, '/client/build/index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
+})
 
 // Haven't created a database to connect yet 
 // mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
