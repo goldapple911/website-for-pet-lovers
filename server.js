@@ -13,6 +13,15 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
 
+// Catch all route to allow React to function on page refresh
+app.get('/*', function(req, res) {
+  res.sendFile(path.join(__dirname, 'path/to/your/index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
+})
+
 // Haven't created a database to connect yet 
 // mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
 
