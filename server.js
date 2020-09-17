@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === "production") {
 
 // Catch all route to allow React to function on page
 app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname, './client/public/index.html'), function(err) {
+  res.sendFile(path.join(__dirname, 'client/public/index.html'), function(err) {
     if (err) {
       res.status(500).send(err)
     }
