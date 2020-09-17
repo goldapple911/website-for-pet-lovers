@@ -14,7 +14,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.get('/*', function (req, res) {
-  res.redirect('/')
+  res.sendFile('client/public/index.html')
 });
 
 // Haven't created a database to connect yet 
