@@ -13,10 +13,9 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-// app.get('/*', function (req, res) {
-//   res.sendFile('client/public/index.html')
-// });
-
+// Catch all route to redirect unmanaged routes back to the react app.
+// THIS OPTION IS NOT SEO OPTIMIZED
+// THIS ROUTE SENDS ALL SAVED LINKS TO THE ROOT
 app.get('/*', function (req, res) {
   res.redirect('/')
 });

@@ -5,7 +5,6 @@ import websiteData from "../utils/SiteData";
 import { ClientContext } from "../utils/ClientContext";
 import Background from '../components/Background';
 import CategoryJumbotron from '../components/CategoryJumbotron';
-import BrandSection from '../components/BrandSection'
 import "./style.css"
 
 export default function ShopByCategory() {
@@ -50,11 +49,6 @@ export default function ShopByCategory() {
                         description={description}
                     />
                 </div>
-            </div>
-            <div className="bottom">
-                <BrandSection 
-                    brands={brands}
-                />
             </div>
         </main>
     )

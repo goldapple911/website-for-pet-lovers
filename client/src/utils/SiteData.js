@@ -47,7 +47,7 @@ export default {
             id: 5,
             category: "Reptile",
             link: reptile,
-            description: ["At Atlas Pet, we've got all your reptile needs covered. Not only do we carry a wide variety of live feeder insects, but we also stock some great pellet, soft, and canned food options for both insectivores and omnivores. With brands like ZooMed®, Exo Terra®, Fluker's®, and Zilla®, we are sure to have everything you need to meet the specific requirements of your unique reptile. Are you looking for something we don't carry? We can special order almost anything just for you.", "Our supplies and services don't end there. Our friendly and knowledgeable staff are ready to help answer questions about any reptile or amphibian. We also carry terrarium accessories, harnesses, heat lamps & bulbs, health aids, and cleaning supplies!", "We are confident that when you leave Atlas Pet, you'll leave with everything you need to keep you cold-blooded creature happy."],
+            description: ["At Atlas Pet, we've got all your reptile needs covered. Not only do we carry a wide variety of live feeder insects, but we also stock some great pellet, soft, and canned food options for both insectivores and omnivores. With brands like ZooMed®, Exo Terra®, Fluker's®, and Zilla®, we are sure to have everything you need to meet the specific requirements of your unique reptile. Are you looking for something we don't carry? We can special order almost anything just for you.", "Our supplies and services don't end there. Our friendly and knowledgeable staff are ready to help answer questions about any reptile or amphibian. We also carry terrarium accessories, harnesses, heat lamps & bulbs, health aids, and cleaning supplies!", "We are confident that when you leave Atlas Pet, you'll leave with everything you need to keep your cold-blooded creature happy."],
             brandExamples: ["these", "are", "brand", "examples"],
             categoryTitle: "Everything for your Reptile.",
             onlineShopURL: ""
@@ -56,7 +56,7 @@ export default {
             id: 6,
             category: "Aquatic",
             link: aquatics,
-            description: "this is a test description",
+            description: ["At Atlas Pet, we've got all your aquarium needs covered. Not only do we carry a wide variety of freshwater and saltwater fish, but we also stock tons of food, aquarium, decoration, and filtration options for all fish. With brands like Aqueon®, Marineland®, Hagen®, and Aquatop®, we are sure to have everything you need to meet the specific requirements of your unique aquarium. Are you looking for something we don't carry? We can special order almost anything just for you.", "Our supplies and services don't end there. Our friendly and knowledgeable staff are ready to help answer questions about any fish, plant, or filter. We also carry aquarium accessories, lights, covers, water conditioners, disease treatments, and cleaning supplies!", "We are confident that when you leave Atlas Pet, you'll leave with everything you need to keep your aquarium up and running."],
             brandExamples: ["these", "are", "brand", "examples"],
             categoryTitle: "Everything for your Aquarium.",
             onlineShopURL: ""
