@@ -48,22 +48,30 @@ export default function Careers() {
             setJobs(jobState.all)
         }
     }
-   
+
     return (
         <main className="hide-overflow">
             <Background />
             <div className="row">
-                <div className="col-md-6">
-                    <div className="row">
-                        <h1 className="section-title">Available Positions</h1>
-                        <button onClick={handleLocationChange} value="Blaine">Blaine</button>
-                        <button onClick={handleLocationChange} value="Stillwater">Stillwater</button>
+                <div className="col-md-6 job-section">
+                    <div className="job-section-overlay"></div>
+                    <div>
+                        <div className="row">
+                            <div className="col-md-12 text-center job-header">
+                                <h1 className="section-title">Available Positions</h1>
+                            </div>
+                            <div className="col-md-12 text-center">
+                                <button type="button" className="btn btn-light btn-filter" onClick={handleLocationChange} value="all">All Locations</button>
+                                <button type="button" className="btn btn-light btn-filter" onClick={handleLocationChange} value="Blaine">Blaine</button>
+                                <button type="button" className="btn btn-light btn-filter" onClick={handleLocationChange} value="Stillwater">Stillwater</button>
+                            </div>
+                        </div>
+                        <JobCard
+                            jobs={jobs}
+                        />
                     </div>
-                    <JobCard
-                        jobs={jobs}
-                    />
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-5">
                     {(signup) ? <FormSignup /> : <FormLogin />}
                 </div>
             </div>
