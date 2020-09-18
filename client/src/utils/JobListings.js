@@ -20,7 +20,7 @@ export default {
             description: "Help lead a team of driven individuals to achieve and exceed Atlas Pet customer service standards. Assist the Team Leader with day-to-day operations and work closely with customers and coworkers to build a positive in-store experience for all!",
             requirements: "",
             wage: "Starting at $14.00/hr.",
-            available: false
+            available: true
         },
         {
             id: "3",
@@ -31,7 +31,7 @@ export default {
             description: "Learn to handle and care for a variety of animals. Gain experience in a sales and service oriented position while being a supportive member of a high-energy team. Help care for the people and animals of Minnesota!",
             requirements: "",
             wage: "Starting at $12.00/hr.",
-            available: false
+            available: true
         },
         {
             id: "4",
@@ -42,7 +42,7 @@ export default {
             description: "Learn to handle and care for a variety of animals. Gain experience in a sales and service oriented position while being a supportive member of a high-energy team. Help care for the people and animals of Minnesota!",
             requirements: "",
             wage: "Starting at $12.00/hr.",
-            available: false
+            available: true
         },
         {
             id: "5",
@@ -64,7 +64,7 @@ export default {
             description: "Help lead a team of driven individuals to achieve and exceed Atlas Pet customer service standards. Assist the Team Leader with day-to-day operations and work closely with customers and coworkers to build a positive in-store experience for all!",
             requirements: "",
             wage: "Starting at $14.00/hr.",
-            available: false
+            available: true
         },
         {
             id: "7",
@@ -86,7 +86,7 @@ export default {
             description: "Learn to handle and care for a variety of animals. Gain experience in a sales and service oriented position while being a supportive member of a high-energy team. Help care for the people and animals of Minnesota!",
             requirements: "",
             wage: "Starting at $12.00/hr.",
-            available: false
+            available: true
         }
     ]
 }
