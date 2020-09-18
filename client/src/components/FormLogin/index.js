@@ -19,8 +19,7 @@ function FormLogin({ toggleForm }) {
     return (
         <div className="jumbotron form-spacing">
             <form className="form">
-                <h1 className="display-4 main-txt signup-login"><strong>Signup</strong></h1>
-                <p className="lead main-txt">Create an account and apply today!</p>
+                <h1 className="display-4 main-txt signup-login"><strong>Login</strong></h1>
 
                 {/* Email input */}
                 <label htmlFor="email">Email</label>
