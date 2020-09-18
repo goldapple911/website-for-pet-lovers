@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
-import SingleCard from '../components/SingleCard';
+import CardSingle from '../components/CardSingle';
 import websiteData from "../utils/SiteData";
 import { ClientContext } from "../utils/ClientContext";
 import Background from '../components/Background';
@@ -38,7 +38,7 @@ export default function ShopByCategory() {
             <Background />
             <div className="row top">
                 <div className="col-md-4 single-card">
-                    <SingleCard
+                    <CardSingle
                         src={link}
                         alt={category}
                     />

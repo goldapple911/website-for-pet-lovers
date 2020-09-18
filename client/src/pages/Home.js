@@ -2,7 +2,7 @@ import React from 'react'
 import dogvid from './assets/dogEating.mp4'
 import HomeJumbotron from '../components/HomeJumbotron'
 import BackgroundVid from '../components/BackgroundVid'
-import CategoryCard from "../components/CategoryCard";
+import CardCategory from "../components/CardCategory";
 import websiteData from "../utils/SiteData";
 import "./style.css"
 
@@ -19,7 +19,7 @@ export default function Home() {
             <div className="row">
                 {dataset.map((data) => (
                     <div className="col-md-2" key={data.id}>
-                    <CategoryCard
+                    <CardCategory
                         src={data.link}
                         alt={data.category}
                         // category={data.category}
