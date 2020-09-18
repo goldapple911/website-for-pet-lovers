@@ -1,5 +1,5 @@
 import React from 'react'
-import './style.css'
+import './cardJob.css'
 
 export default function JobCard({ jobs }) {
     return (

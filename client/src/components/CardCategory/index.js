@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom"
-import "./style.css";
+import "./cardCategory.css";
 import { ClientContext } from "../../utils/ClientContext";
 
 

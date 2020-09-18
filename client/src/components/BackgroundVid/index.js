@@ -1,5 +1,5 @@
 import React from "react";
-import "./style.css";
+import "./backgroundVid.css";
 
 function BackgroundVid({ src }) {
     return (
