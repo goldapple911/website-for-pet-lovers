@@ -30,7 +30,7 @@ function ContactForm() {
             <form className="form">
                 <h1 className="display-4 main-txt"><strong>Signup</strong></h1>
                 <hr className="my-4" />
-                <p className="lead main-txt">Questions, Comments, Concerns?</p>
+                <p className="lead main-txt">Create an account to apply!</p>
                 <p className="lead main-txt">Here's your chance to let us know!</p>
                 {/* Name input */}
                 <label htmlFor="name">Name</label>
