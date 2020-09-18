@@ -37,6 +37,14 @@ export default function Careers() {
         Stillwater: []
     })
 
+    const toggleForm = () => {
+        if (signup === true) {
+            setSignup(false)
+        } else {
+            setSignup(true)
+        }
+    }
+
     const [jobs, setJobs] = useState([])
 
     const handleLocationChange = (e) => {
@@ -72,7 +80,7 @@ export default function Careers() {
                     </div>
                 </div>
                 <div className="form-wrapper">
-                    {(signup) ? <FormSignup /> : <FormLogin />}
+                    {(signup) ? <FormSignup toggleForm={toggleForm}/> : <FormLogin toggleForm={toggleForm}/>}
                 </div>
             </div>
         </main>

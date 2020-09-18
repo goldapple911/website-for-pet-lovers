@@ -1,64 +1,57 @@
 import React, { useState } from "react";
 import axios from "axios";
-// import "./style.css";
 
-function ContactForm() {
+
+function FormLogin({ toggleForm }) {
     const [formData, setFormData] = useState({
-        name: "",
         email: "",
+        password: "",
     });
-
-    function sendEmail(e) {
-        e.preventDefault();
-        axios.post("/send", formData)
-        .then(res => {
-            console.log(res)
-            console.log(res.data)
-        })
-    };
-
-    function handleNameChange(e) {
-        setFormData({ ...formData, name: e.target.value })
-    };
 
     function handleEmailChange(e) {
         setFormData({ ...formData, email: e.target.value })
     };
 
+    function handlePasswordChange(e) {
+        setFormData({ ...formData, password: e.target.value })
+    };
+
     return (
-        <div className="jumbotron">
+        <div className="jumbotron form-spacing">
             <form className="form">
-                <h1 className="display-4 main-txt"><strong>Login</strong></h1>
-                <hr className="my-4" />
-                <p className="lead main-txt">Questions, Comments, Concerns?</p>
-                <p className="lead main-txt">Here's your chance to let us know!</p>
-                {/* Name input */}
-                <label htmlFor="name">Name</label>
-                <input
-                    className="inputs"
-                    type="text"
-                    id="name"
-                    name="name"
-                    onChange={handleNameChange}
-                ></input>
-                <br />
+                <h1 className="display-4 main-txt signup-login"><strong>Signup</strong></h1>
+                <p className="lead main-txt">Create an account and apply today!</p>
+
                 {/* Email input */}
                 <label htmlFor="email">Email</label>
                 <input
                     className="inputs"
-                    type="text"
+                    type="email"
                     id="email"
                     name="email"
                     onChange={handleEmailChange}
                 ></input>
-                <br />
-                {/* Submit button */}
+
+                {/* Password input */}
+                <label htmlFor="password">Password</label>
                 <input
-                    className="submit-btn"
-                    type="submit"
-                    value="Send Message"
-                    onClick={sendEmail}
+                    className="inputs"
+                    type="password"
+                    id="password"
+                    name="password"
+                    onChange={handlePasswordChange}
                 ></input>
+
+                {/* Submit button */}
+                <button
+                    className="submit-btn btn-submit"
+                    type="submit"
+                    // onClick={sendEmail}
+                >Submit</button>
+                <p className="lead signup-login-txt">Already have an account? <button className="text-button" onClick={toggleForm}>
+                        Login Here
+                    </button>
+                </p>
             </form>
             <div className="row-overlay"></div>
         </div>
@@ -66,4 +59,4 @@ function ContactForm() {
 }
 
 
-export default ContactForm;
+export default FormLogin;

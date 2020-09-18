@@ -15,7 +15,8 @@
 
 label {
     position: relative;
-    margin-top: 15px;
+    margin-top: 10px;
+    margin-bottom: 0px;
     display: block;
     text-align: left;
     color: lightgray;
@@ -151,6 +152,14 @@ opacity: 50%;
 
 .signup-login {
     margin-bottom: 25px;
+}
+
+.signup-login-txt {
+    position: relative;
+    margin-bottom: 0px;
+    color: lightgray;
+    z-index: 2;
+    font-size: 16px;
 }
 
 .text-button {
