@@ -5,7 +5,8 @@ export const ClientContext = createContext();
 const ClientContextProvider = (props) => {
   const [clientState, setClientState] = useState({
     category: "Category State Unset",
-    currentUser: "User State Unset"
+    currentUser: "User State Unset",
+    loggedIn: false
   })
 
   const changeCategory = (category) => {

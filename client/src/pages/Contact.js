@@ -1,6 +1,6 @@
 import React from 'react';
 import Background from '../components/Background';
-import ContactForm from '../components/ContactForm';
+import FormContact from '../components/FormContact';
 import "./style.css"
 
 export default function index() {
@@ -9,7 +9,7 @@ export default function index() {
             <Background />
             <div className="row">
                 <div className="col-lg-7 contact-form">
-                    <ContactForm />
+                    <FormContact />
                 </div>
             </div>
         </main>
