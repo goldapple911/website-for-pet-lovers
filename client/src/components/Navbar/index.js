@@ -2,9 +2,9 @@ import React from "react"
 import { Link, useLocation } from "react-router-dom"
 import "../../pages/style.css"
 import logo from "../../pages/assets/logo.png"
-import "./style.css"
+import "./navbar.css"
 
-function NavTabs({ checkSelection, setCategory }) {
+function NavTabs() {
 
     const location = useLocation();
 
