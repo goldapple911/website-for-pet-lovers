@@ -11,10 +11,10 @@ function ContactForm() {
     function sendEmail(e) {
         e.preventDefault();
         axios.post("/send", formData)
-        .then(res => {
-            console.log(res)
-            console.log(res.data)
-        })
+            .then(res => {
+                console.log(res)
+                console.log(res.data)
+            })
     };
 
     function handleNameChange(e) {
@@ -26,12 +26,10 @@ function ContactForm() {
     };
 
     return (
-        <div className="jumbotron">
+        <div className="jumbotron form-spacing">
             <form className="form">
-                <h1 className="display-4 main-txt"><strong>Signup</strong></h1>
-                <hr className="my-4" />
-                <p className="lead main-txt">Create an account to apply!</p>
-                <p className="lead main-txt">Here's your chance to let us know!</p>
+                <h1 className="display-4 main-txt signup-login"><strong>Signup</strong></h1>
+                <p className="lead main-txt">Create an account and apply today!</p>
                 {/* Name input */}
                 <label htmlFor="name">Name</label>
                 <input
@@ -53,12 +51,12 @@ function ContactForm() {
                 ></input>
                 <br />
                 {/* Submit button */}
-                <input
-                    className="submit-btn"
+                <button
+                    className="submit-btn btn-submit"
                     type="submit"
-                    value="Send Message"
                     onClick={sendEmail}
-                ></input>
+                >Submit</button>
+                <p className="lead signup-login-txt">Already have an account? <button className="text-button">Login Here</button></p>
             </form>
             <div className="row-overlay"></div>
         </div>

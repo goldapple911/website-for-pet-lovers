@@ -7,11 +7,6 @@
     /* margin-bottom: 0px; */
 }
 
-.form {
-    padding: 40px;
-    border-radius: 15px;
-}
-
 .main-txt {
     position: relative;
     color: lightgray;
@@ -21,34 +16,6 @@
 .lead {
     font-weight: 500;
     margin: 0px;
-}
-
-.my-4 {
-    background: lightgray;
-}
-
-label {
-    position: relative;
-    margin-top: 15px;
-    display: block;
-    text-align: left;
-    color: lightgray;
-    z-index: 1;
-}
-
-.inputs {
-    position: relative;
-    /* opacity: 75%; */
-    background: lightgray;
-    width: 100%;
-    z-index: 2;
-}
-
-.submit-btn {
-    position: relative;
-    z-index: 2;
-    padding: 10px;
-    border-radius: 15px;
 }
 
 @media only screen and (max-width:800px) {

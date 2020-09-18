@@ -71,7 +71,7 @@ export default function Careers() {
                         />
                     </div>
                 </div>
-                <div className="col-md-5">
+                <div className="form-wrapper">
                     {(signup) ? <FormSignup /> : <FormLogin />}
                 </div>
             </div>

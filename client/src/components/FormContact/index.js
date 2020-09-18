@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./formContact.css";
+import "../../pages/style.css";
 
 function ContactForm() {
     const [formData, setFormData] = useState({
@@ -31,12 +31,13 @@ function ContactForm() {
     };
 
     return (
-        <div className="jumbotron">
+        <div className="jumbotron form-spacing">
             <form className="form">
-                <h1 className="display-4 main-txt"><strong>Drop a Line!</strong></h1>
-                <hr className="my-4" />
-                <p className="lead main-txt">Questions, Comments, Concerns?</p>
-                <p className="lead main-txt">Here's your chance to let us know!</p>
+                <h1 className="display-4 main-txt"><strong>Drop a Line</strong></h1>
+                <br/>
+                <div className="hr"></div>
+                <br/>
+                <p className="lead main-txt">Questions, Comments, Concerns? Let us know!</p>
                 {/* Name input */}
                 <label htmlFor="name">Name</label>
                 <input
@@ -51,7 +52,7 @@ function ContactForm() {
                 <label htmlFor="email">Email</label>
                 <input
                     className="inputs"
-                    type="text"
+                    type="email"
                     id="email"
                     name="email"
                     onChange={handleEmailChange}
@@ -67,12 +68,12 @@ function ContactForm() {
                     onChange={handleMessageChange}
                 ></textarea>
                 {/* Submit button */}
-                <input
-                    className="submit-btn"
+                <button
+                    className="submit-btn btn btn-light btn-submit"
                     type="submit"
                     value="Send Message"
                     onClick={sendEmail}
-                ></input>
+                >Send Message</button>
             </form>
             <div className="row-overlay"></div>
         </div>
