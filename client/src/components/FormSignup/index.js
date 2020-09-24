@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
 import { withRouter } from 'react-router';
 import app from '../../utils/firebase';
 import "./formSignup.css";
@@ -12,8 +12,9 @@ function FormSignup({ toggleForm, history }) {
     });
 
     // Function to sign up user via firebase.
-    const handleSignUp = useCallback(
+      const handleSignUp =
         async event => {
+        console.log(formData)
         event.preventDefault();
         try {
             await app
@@ -24,7 +25,7 @@ function FormSignup({ toggleForm, history }) {
         catch (error) {
             console.log('Signup Form Error: ', error);
         }
-    }, [history]);
+    };
     
     function handleNameChange(e) {
         console.log(formData)

@@ -1,5 +1,5 @@
-import React, { useState, useContext, useCallback } from "react";
-import { withRouter, Redirect } from 'react-router';
+import React, { useState, useContext } from "react";
+import { Redirect } from 'react-router';
 import app from '../../utils/firebase';
 import { AuthContext } from '../../utils/AuthContext'
 
@@ -10,8 +10,7 @@ function FormLogin({ toggleForm, history }) {
     });
 
     // Function to login user via firebase.
-    const handleLogin = useCallback(
-        async event => {
+    const handleLogin = async event => {
         event.preventDefault();
         try {
             await app
@@ -22,7 +21,7 @@ function FormLogin({ toggleForm, history }) {
         catch (error) {
             console.log('Login Form Error: ', error);
         }
-    }, [history]);
+    };
 
     const { currentUser } = useContext(AuthContext);
 
@@ -69,8 +68,8 @@ function FormLogin({ toggleForm, history }) {
                     type="submit"
                     onClick={handleLogin}
                 >Submit</button>
-                <p className="lead signup-login-txt">Already have an account? <button className="text-button" onClick={toggleForm}>
-                        Login Here
+                <p className="lead signup-login-txt">Need an account? <button className="text-button" onClick={toggleForm}>
+                    Signup Here
                     </button>
                 </p>
             </form>
