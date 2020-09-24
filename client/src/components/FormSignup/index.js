@@ -14,6 +14,11 @@ function FormSignup({ toggleForm, history }) {
     // Function to sign up user via firebase.
       const handleSignUp =
         async event => {
+        const { password, retypePassword } = formData
+        if (password !== retypePassword) {
+            alert("Your passwords do not match")
+            return
+        }
         console.log(formData)
         event.preventDefault();
         try {

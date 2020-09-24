@@ -5,20 +5,17 @@ import jobData from "../utils/JobListings";
 import JobCard from '../components/CardJob';
 import FormSignup from '../components/FormSignup';
 import FormLogin from '../components/FormLogin';
-import { Redirect } from 'react-router';
 import { AuthContext } from '../utils/AuthContext';
+import { Redirect } from 'react-router-dom';
 
 export default function Careers() {
-    const { currentUser } = useContext(AuthContext);
     let currentPositions = [];
     let currentPositionsBlaine = [];
     let currentPositionsStillwater = [];
     const [signup, setSignup] = useState(true)
+    const { currentUser } = useContext(AuthContext);
 
     useEffect(() => {
-        if (currentUser) {
-            return <Redirect to='/User-Page' />;
-        }
         for (let i = 0; i < jobData.alljobs.length; i++) {
             if (jobData.alljobs[i].available === true) {
                 currentPositions.push(jobData.alljobs[i])
@@ -35,7 +32,7 @@ export default function Careers() {
             Stillwater: currentPositionsStillwater
         })
         setJobs(currentPositions)
-    }, [currentPositions, currentPositionsBlaine, currentPositionsStillwater, currentUser])
+    }, [])
 
     const [jobState, setJobState] = useState({
         all: [],
@@ -63,7 +60,7 @@ export default function Careers() {
         }
     }
 
-    return (
+    return (currentUser ? <Redirect to="User-Page" /> :
         <main className="hide-overflow">
             <Background />
             <div className="row">
