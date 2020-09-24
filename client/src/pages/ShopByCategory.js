@@ -13,7 +13,6 @@ export default function ShopByCategory() {
     const [category, setCategory] = useState("Local Category Unset");
     const [title, setTitle] = useState("Local Title Unset");
     const [description, setDescription] = useState(["Local Description Unset"]);
-    const [brands, setBrands] = useState([])
     const { clientState } = useContext(ClientContext);
 
     useEffect(() => {
@@ -24,10 +23,9 @@ export default function ShopByCategory() {
                 setCategory(dataset[i].category);
                 setTitle(dataset[i].categoryTitle);
                 setDescription(dataset[i].description);
-                setBrands(dataset[i].brandExamples);
             }
         }
-    })
+    },[clientState.category])
 
     if (clientState.category === "Category State Unset") {
         history.push('/')

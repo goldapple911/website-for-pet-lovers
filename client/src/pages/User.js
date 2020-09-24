@@ -27,7 +27,7 @@ export default function User() {
             Stillwater: currentPositionsStillwater
         })
         setJobs(currentPositions)
-    }, [])
+    }, [currentPositions, currentPositionsBlaine, currentPositionsStillwater])
 
     const [jobState, setJobState] = useState({
         all: [],

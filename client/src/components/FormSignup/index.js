@@ -95,7 +95,7 @@ function FormSignup({ toggleForm, history }) {
                     type="submit"
                     onClick={handleSignUp}
                 >Submit</button>
-                <p className="lead signup-login-txt">Already have an account? <button className="text-button" onClick={toggleForm}>
+                <p className="lead signup-login-txt">Already have an account? <button className="text-button" type="button" onClick={toggleForm}>
                         Login Here
                     </button>
                 </p>

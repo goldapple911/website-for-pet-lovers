@@ -29,7 +29,7 @@ export default function Careers() {
             Stillwater: currentPositionsStillwater
         })
         setJobs(currentPositions)
-    }, [])
+    }, [currentPositions, currentPositionsBlaine, currentPositionsStillwater])
 
     const [jobState, setJobState] = useState({
         all: [],

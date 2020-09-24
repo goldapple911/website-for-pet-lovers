@@ -32,7 +32,7 @@ function NavTabs() {
                                 >
                                     In Store
                                 </Link>
-                                <a className="dropdown-link" href="https://shop.atlaspet.net/products/list/" target="_blank">Online</a>
+                                <a className="dropdown-link" href="https://shop.atlaspet.net/products/list/" target="_blank" rel="noopener noreferrer">Online</a>
                             </div>
                         </div>
 
