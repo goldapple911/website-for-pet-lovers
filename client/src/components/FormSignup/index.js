@@ -5,7 +5,6 @@ import "./formSignup.css";
 
 function FormSignup({ toggleForm, history }) {
     const [formData, setFormData] = useState({
-        name: "",
         email: "",
         password: "",
         retypePassword: ""
@@ -54,15 +53,6 @@ function FormSignup({ toggleForm, history }) {
             <form className="form">
                 <h1 className="display-4 main-txt signup-login"><strong>Signup</strong></h1>
                 <p className="lead main-txt">Create an account and apply today!</p>
-                {/* Name input */}
-                <label htmlFor="name">Name</label>
-                <input
-                    className="inputs"
-                    type="text"
-                    id="name"
-                    name="name"
-                    onChange={handleNameChange}
-                ></input>
 
                 {/* Email input */}
                 <label htmlFor="email">Email</label>

@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Background from '../components/Background';
 import "./style.css";
 import jobData from "../utils/JobListings"
 import JobCard from '../components/CardJob';
 import app from '../utils/firebase';
+import { AuthContext } from '../utils/AuthContext';
 
 export default function User() {
     let currentPositions = [];
     let currentPositionsBlaine = [];
     let currentPositionsStillwater = [];
+    const { currentUser } = useContext(AuthContext);
 
     useEffect(() => {
+        console.log(currentUser.displayName)
         for (let i = 0; i < jobData.alljobs.length; i++) {
             if (jobData.alljobs[i].available === true) {
                 currentPositions.push(jobData.alljobs[i])
@@ -51,27 +54,32 @@ export default function User() {
         <main className="hide-overflow">
             <Background />
             <div className="row">
-                <div className="col-md-6 job-section">
+                <div className="col-md-12 job-section user-page">
                     <div className="job-section-overlay"></div>
                     <div>
                         <div className="row">
                             <div className="col-md-12 text-center job-header">
+                                <h1 className="section-title">Hello {currentUser.displayName ? currentUser.displayName : "User"}</h1>
+                                <button className="btn btn-light btn-filter sign-out" onClick={() => app.auth().signOut()}>Sign Out</button>
+                                <button className="btn btn-light btn-filter edit" /*onClick={}*/>Edit Info</button>
                                 <h1 className="section-title">Available Positions</h1>
                             </div>
+
+                        </div>
+                        <div className="col-md-6 user-info">
+                            
+                        </div>
+                        <div className="col-md-6">
                             <div className="col-md-12 text-center">
                                 <button type="button" className="btn btn-light btn-filter" onClick={handleLocationChange} value="all">All Locations</button>
                                 <button type="button" className="btn btn-light btn-filter" onClick={handleLocationChange} value="Blaine">Blaine</button>
                                 <button type="button" className="btn btn-light btn-filter" onClick={handleLocationChange} value="Stillwater">Stillwater</button>
                             </div>
+                            <JobCard
+                                jobs={jobs}
+                            />
                         </div>
-                        <JobCard
-                            jobs={jobs}
-                        />
                     </div>
-                </div>
-                <div className="form-wrapper">
-                    <h1>YOU ARE LOGGED IN</h1>
-                    <button onClick={() => app.auth().signOut()}>Sign Out</button>
                 </div>
             </div>
         </main>

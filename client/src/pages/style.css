@@ -177,3 +177,21 @@ opacity: 50%;
         z-index: 1;
 
 }
+
+/* User Page */
+.sign-out {
+ position: absolute;
+ left: 25px;
+ top: 10px;
+}
+
+.edit {
+    position: absolute;
+    right: 25px;
+    top: 10px;
+}
+
+.user-page {
+    position: relative;
+    margin: 0px;
+}
