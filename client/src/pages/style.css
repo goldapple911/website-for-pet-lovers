@@ -181,17 +181,22 @@ opacity: 50%;
 /* User Page */
 .sign-out {
  position: absolute;
- left: 25px;
+ right: 25px;
  top: 10px;
 }
 
 .edit {
     position: absolute;
-    right: 25px;
+    left: 25px;
     top: 10px;
 }
 
 .user-page {
     position: relative;
     margin: 0px;
+}
+
+.e-text {
+    color: lightgray;
+    font-size: 16px;
 }
