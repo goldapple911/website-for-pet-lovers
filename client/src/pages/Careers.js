@@ -1,18 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Background from '../components/Background';
 import "./style.css";
-import jobData from "../utils/JobListings"
+import jobData from "../utils/JobListings";
 import JobCard from '../components/CardJob';
-import FormSignup from '../components/FormSignup'
-import FormLogin from '../components/FormLogin'
+import FormSignup from '../components/FormSignup';
+import FormLogin from '../components/FormLogin';
+import { Redirect } from 'react-router';
+import { AuthContext } from '../utils/AuthContext';
 
 export default function Careers() {
+    const { currentUser } = useContext(AuthContext);
     let currentPositions = [];
     let currentPositionsBlaine = [];
     let currentPositionsStillwater = [];
     const [signup, setSignup] = useState(true)
 
     useEffect(() => {
+        if (currentUser) {
+            return <Redirect to='/User-Page' />;
+        }
         for (let i = 0; i < jobData.alljobs.length; i++) {
             if (jobData.alljobs[i].available === true) {
                 currentPositions.push(jobData.alljobs[i])
@@ -29,7 +35,7 @@ export default function Careers() {
             Stillwater: currentPositionsStillwater
         })
         setJobs(currentPositions)
-    }, [currentPositions, currentPositionsBlaine, currentPositionsStillwater])
+    }, [currentPositions, currentPositionsBlaine, currentPositionsStillwater, currentUser])
 
     const [jobState, setJobState] = useState({
         all: [],
