@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import app from './firebase';
 
-export const AuthContext = react.createContext();
+export const AuthContext = React.createContext();
 
 // Set state to store authentication status
 export const AuthProvider = ({ children }) => {
@@ -20,5 +20,5 @@ export const AuthProvider = ({ children }) => {
         >
             {children}
         </AuthContext.Provider>
-    )
-}
+    );
+};

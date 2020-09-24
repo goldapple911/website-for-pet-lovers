@@ -1,8 +1,9 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useState, useCallback } from "react";
+import { withRouter } from 'react-router';
+import app from '../../utils/firebase';
 import "./formSignup.css";
 
-function FormSignup({ toggleForm }) {
+function FormSignup({ toggleForm, history }) {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -10,7 +11,23 @@ function FormSignup({ toggleForm }) {
         retypePassword: ""
     });
 
+    // Function to sign up user via firebase.
+    const handleSignUp = useCallback(
+        async event => {
+        event.preventDefault();
+        try {
+            await app
+            .auth()
+            .createUserWithEmailAndPassword(formData.email, formData.password);
+            history.push('/User-Page');
+        } 
+        catch (error) {
+            console.log('Signup Form Error: ', error);
+        }
+    }, [history]);
+    
     function handleNameChange(e) {
+        console.log(formData)
         setFormData({ ...formData, name: e.target.value })
     };
 
@@ -75,7 +92,7 @@ function FormSignup({ toggleForm }) {
                 <button
                     className="submit-btn btn-submit"
                     type="submit"
-                    // onClick={sendEmail}
+                    onClick={handleSignUp}
                 >Submit</button>
                 <p className="lead signup-login-txt">Already have an account? <button className="text-button" onClick={toggleForm}>
                         Login Here
@@ -88,4 +105,4 @@ function FormSignup({ toggleForm }) {
 }
 
 
-export default FormSignup;
+export default withRouter(FormSignup);

@@ -1,16 +1,17 @@
-import * as firebase from 'firebase';
-import 'firebase/auth'
+import * as firebase from 'firebase/app';
+import 'firebase/auth';
 
 // Configuration for firebase
+// NEED NEW HIDDEN KEYS BEFORE GOING TO PRODUCTION
 var config = {
-    apiKey: process.env.FIREBASE_APIKEY,
+    apiKey: "AIzaSyDlc-CVOpp40hIzNOWexDTACq2C_w-qrbw",
     authDomain: "atlas-pet-website.firebaseapp.com",
-    databaseURL: process.env.FIREBASE_DATABASEURL,
+    databaseURL: "https://atlas-pet-website.firebaseio.com",
     projectId: "atlas-pet-website",
     storageBucket: "atlas-pet-website.appspot.com",
-    messagingSenderId: process.env.FIREBASE_MESSAGEID,
-    appId: process.env.FIREBASE_APPID,
-    measurementId: process.env.FIREBASE_MEASUREMENTID
+    messagingSenderId: "235788116248",
+    appId: "1:235788116248:web:5d757793fc83da82a87e6d",
+    measurementId: "G-XQ1B3FKZXT"
   };
   const app = firebase.initializeApp(config);
 

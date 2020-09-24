@@ -7,14 +7,16 @@ import Careers from "./pages/Careers";
 import ShopInStore from "./pages/ShopInStore";
 import ShopByCategory from "./pages/ShopByCategory";
 import ClientContextProvider from './utils/ClientContext';
+import User from './pages/User'
+import SecuredRoute from './pages/SecuredRoute'
 import { AuthProvider } from './utils/AuthContext';
 
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <AuthProvider>
+    <AuthProvider>
+      <Router>
+        <div className="App">
           <ClientContextProvider>
             <NavTabs />
             <Route exact path="/" render={() => <Home />} />
@@ -22,10 +24,11 @@ function App() {
             <Route exact path="/Shop-Local" component={ShopInStore} />
             <Route exact path="/Careers" component={Careers} />
             <Route exact path="/Shop-Category" component={ShopByCategory} />
+            <SecuredRoute exact path="/User-Page" component={User} />
           </ClientContextProvider>
-        </AuthProvider>
-      </div>
-    </Router>
+        </div>
+      </Router>
+    </AuthProvider>
   );
 }
 

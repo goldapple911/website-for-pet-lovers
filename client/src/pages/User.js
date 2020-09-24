@@ -3,14 +3,12 @@ import Background from '../components/Background';
 import "./style.css";
 import jobData from "../utils/JobListings"
 import JobCard from '../components/CardJob';
-import FormSignup from '../components/FormSignup'
-import FormLogin from '../components/FormLogin'
+import app from '../utils/firebase';
 
 export default function User() {
     let currentPositions = [];
     let currentPositionsBlaine = [];
     let currentPositionsStillwater = [];
-    const [signup, setSignup] = useState(true)
 
     useEffect(() => {
         for (let i = 0; i < jobData.alljobs.length; i++) {
@@ -36,14 +34,6 @@ export default function User() {
         Blaine: [],
         Stillwater: []
     })
-
-    const toggleForm = () => {
-        if (signup === true) {
-            setSignup(false)
-        } else {
-            setSignup(true)
-        }
-    }
 
     const [jobs, setJobs] = useState([])
 
@@ -80,7 +70,8 @@ export default function User() {
                     </div>
                 </div>
                 <div className="form-wrapper">
-                    {(signup) ? <FormSignup toggleForm={toggleForm}/> : <FormLogin toggleForm={toggleForm}/>}
+                    <h1>YOU ARE LOGGED IN</h1>
+                    <button onClick={() => app.auth().signOut()}>Sign Out</button>
                 </div>
             </div>
         </main>

@@ -1,12 +1,34 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useState, useContext, useCallback } from "react";
+import { withRouter, Redirect } from 'react-router';
+import app from '../../utils/firebase';
+import { AuthContext } from '../../utils/AuthContext'
 
-
-function FormLogin({ toggleForm }) {
+function FormLogin({ toggleForm, history }) {
     const [formData, setFormData] = useState({
         email: "",
         password: "",
     });
+
+    // Function to login user via firebase.
+    const handleLogin = useCallback(
+        async event => {
+        event.preventDefault();
+        try {
+            await app
+            .auth()
+            .signInWithEmailAndPassword(formData.email, formData.password);
+            history.push('/User-Page');
+        } 
+        catch (error) {
+            console.log('Login Form Error: ', error);
+        }
+    }, [history]);
+
+    const { currentUser } = useContext(AuthContext);
+
+    if (currentUser) {
+        return <Redirect to='/User-Page' />;
+    }
 
     function handleEmailChange(e) {
         setFormData({ ...formData, email: e.target.value })
@@ -45,7 +67,7 @@ function FormLogin({ toggleForm }) {
                 <button
                     className="submit-btn btn-submit"
                     type="submit"
-                    // onClick={sendEmail}
+                    onClick={handleLogin}
                 >Submit</button>
                 <p className="lead signup-login-txt">Already have an account? <button className="text-button" onClick={toggleForm}>
                         Login Here
