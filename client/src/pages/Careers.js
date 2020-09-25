@@ -14,6 +14,7 @@ export default function Careers() {
     let currentPositionsStillwater = [];
     const [signup, setSignup] = useState(true)
     const { currentUser } = useContext(AuthContext);
+   
 
     useEffect(() => {
         for (let i = 0; i < jobData.alljobs.length; i++) {
@@ -80,7 +81,7 @@ export default function Careers() {
 
                     <div className="row">
                         {jobs.map((job) => (
-                            <div className="col-lg-6">
+                            <div className="col-lg-6" key={job.id}>
                             <JobCard
                                 job={job}
                             />

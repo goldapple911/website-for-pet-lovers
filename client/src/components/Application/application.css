@@ -1,0 +1,13 @@
+.riser {
+    position: relative;
+    z-index: 1;
+}
+
+.app-input {
+    width: 100%;
+}
+
+.input-area {
+    padding-left: 2%;
+    padding-right: 2%;
+}

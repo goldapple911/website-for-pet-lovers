@@ -3,7 +3,7 @@ import './cardJob.css'
 
 export default function JobCard({ job }) {
     return (
-                        <div className="card-body job-card" key={job.id}>
+                        <div className="card-body job-card">
                             <h2 className="card-title job-title text-center">{job.title}: {job.location}</h2>
                             <p className="job-text text-center">{job.classification}</p>
                             <p className="job-text text-center">{job.wage}</p>
