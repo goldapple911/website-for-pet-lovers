@@ -36,12 +36,12 @@ function NavTabs() {
                             </div>
                         </div>
 
-                        <Link
+                        {/* <Link
                             to="/Contact"
                             className={location.pathname === "/Contact" ? "nav-link active-link" : "nav-link inactive-link"}
                         >
                             Contact Us
-                            </Link>
+                            </Link> */}
 
                         <Link
                             to="/Careers"
