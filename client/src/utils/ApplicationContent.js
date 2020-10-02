@@ -1,5 +1,5 @@
 export default {
-    alljobs: [
+    content: [
         {
             id: "1",
             location: "Blaine",
@@ -11,11 +11,15 @@ export default {
             wage: "Starting at $16.00/hr.",
             available: false,
             questions: [
+                "Please describe your experience working in retail or customer service.",
                 "Why would you like to work for Atlas?",
                 "Describe a time when you have shown leadership.",
                 "Describe a challenge you have faced and how you worked to resolve it.",
                 "What do you consider to be the most important aspect of working in a retail pet store?"
-            ]
+            ],
+            references: true,
+            allowResume: true,
+            allowCoverLetter: true
         },
         {
             id: "2",

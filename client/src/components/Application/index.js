@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import WorkHistory from '../WorkHistory'
+import AppQuestion from '../AppQuestion'
+import ApplicationContent from '../../utils/ApplicationContent'
 import "./application.css"
 
 export default function Application() {
     const [workHistory, setWorkHistory] = useState(0)
+    let questions = ApplicationContent.content[0].questions
 
     return (
         <div>
@@ -46,6 +49,7 @@ export default function Application() {
                     </div>
                 </div>
 
+                {/* Expandable work history section */}
                 {workHistory > 0 ? <WorkHistory /> : null}
                 {workHistory > 1 ? <WorkHistory /> : null}
                 {workHistory > 2 ? <WorkHistory /> : null}
@@ -61,6 +65,12 @@ export default function Application() {
                         + Experience
                 </button>
                     : null}
+
+                {questions.map((question) => (
+                    <div>
+                        <AppQuestion question={question} />
+                    </div>
+                ))}
             </form>
         </div>
     )
