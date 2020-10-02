@@ -63,7 +63,17 @@ export default {
             description: "Lead a team of driven individuals to achieve and exceed Atlas Pet customer service standards. Develop and promote a supportive team mentality and work closely with customers and coworkers to build a positive in-store experience for all!",
             requirements: "",
             wage: "Starting at $16.00/hr.",
-            available: false
+            available: false,
+            questions: [
+                "Please describe your experience working in retail or customer service.",
+                "Why would you like to work for Atlas?",
+                "Describe a time when you have shown leadership.",
+                "Describe a challenge you have faced and how you worked to resolve it.",
+                "What do you consider to be the most important aspect of working in a retail pet store?"
+            ],
+            references: true,
+            allowResume: true,
+            allowCoverLetter: true
         },
         {
             id: "6",

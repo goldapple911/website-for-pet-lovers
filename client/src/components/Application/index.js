@@ -1,12 +1,26 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import WorkHistory from '../WorkHistory'
 import AppQuestion from '../AppQuestion'
 import ApplicationContent from '../../utils/ApplicationContent'
 import "./application.css"
 
 export default function Application() {
-    const [workHistory, setWorkHistory] = useState(0)
-    let questions = ApplicationContent.content[0].questions
+    const { content } = ApplicationContent;
+    const [workHistory, setWorkHistory] = useState(0);
+
+    // Need to set as empty and pass in from Careers but testing works 
+    const [selectedJob, setSelectedJob] = useState("Team Leader");
+    const [selectedLocation, setSelectedLocation] = useState("Blaine");
+    const [questions, setQuestions] = useState([]);
+
+    useEffect(() => {
+        // useEffect hook to populate the questions on the application based off of selected job and location.
+        for (let i = 0; i < content.length; i++) {
+            if (content[i].title === selectedJob && content[i].location === selectedLocation) {
+                setQuestions(content[i].questions)
+            }
+        }
+    }, [])
 
     return (
         <div>
