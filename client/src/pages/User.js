@@ -70,24 +70,24 @@ export default function User() {
                     </div>
 
 
-                    {!apply ? <Application /> : 
-                    <div className="col-md-12 text-center">
-                    <button type="button" className="btn btn-light btn-filter" onClick={handleLocationChange} value="all">All Locations</button>
-                    <button type="button" className="btn btn-light btn-filter" onClick={handleLocationChange} value="Blaine">Blaine</button>
-                    <button type="button" className="btn btn-light btn-filter" onClick={handleLocationChange} value="Stillwater">Stillwater</button>
+                    {!apply ? <Application /> :
+                        <div className="col-md-12 text-center">
+                            <button type="button" className="btn btn-light btn-filter" onClick={handleLocationChange} value="all">All Locations</button>
+                            <button type="button" className="btn btn-light btn-filter" onClick={handleLocationChange} value="Blaine">Blaine</button>
+                            <button type="button" className="btn btn-light btn-filter" onClick={handleLocationChange} value="Stillwater">Stillwater</button>
 
-                    <div className="row">
-                        {jobs.map((job) => (
-                            <div className="col-lg-3 col-md-4 col-sm-6" onClick={() => {console.log("Clicked")}} key={job.id}>
-                                <JobCard
-                                    job={job}
-                                />
+                            <div className="row">
+                                {jobs.map((job) => (
+                                    <div className="col-lg-3 col-md-4 col-sm-6" onClick={() => { console.log("Clicked") }} key={job.id}>
+                                        <JobCard
+                                            job={job}
+                                        />
+                                    </div>
+                                ))}
                             </div>
-                        ))}
-                    </div>
-                </div>
+                        </div>
                     }
-                    
+
                 </div>
             </div>
         </main>

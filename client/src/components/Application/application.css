@@ -5,9 +5,27 @@
 
 .app-input {
     width: 100%;
+    background-color: rgb(42, 44, 54);
+    color: white;
 }
 
 .input-area {
     padding-left: 2%;
     padding-right: 2%;
+}
+
+.application-form-wrapper {
+    background-color: rgb(41, 41, 41);
+}
+
+.application-form {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.app-label {
+    margin-bottom: 7px;
+    font-weight: 400;
+    color: white;
+    font-size: 18px;
 }

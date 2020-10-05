@@ -39,7 +39,7 @@ let transporter = nodemailer.createTransport({
 });
 
 // Post route for contact form submission
-app.post('/send', (req, res) => {
+app.post('/send', (req, res, next) => {
   console.log(req.body)
   var { name, email, message } = req.body;
   let mailOptions = {

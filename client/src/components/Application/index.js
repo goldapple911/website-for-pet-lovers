@@ -23,42 +23,42 @@ export default function Application() {
     }, [])
 
     return (
-        <div>
+        <div className="application-form-wrapper">
             <form className="application-form">
                 <div className="row">
                     {/* First Name */}
                     <div className="col-md-4 input-area">
-                        <label>First Name</label>
+                        <label className="app-label">First Name</label>
                         <input type="text" id="fname" name="fname" className="riser app-input"></input>
                     </div>
 
                     {/* Last Name */}
                     <div className="col-md-4 input-area">
-                        <label>Last Name</label>
+                        <label className="app-label">Last Name</label>
                         <input type="text" id="lname" name="lname" className="riser app-input"></input>
                     </div>
 
                     {/* Date of Birth */}
                     <div className="col-md-4 input-area">
-                        <label>Date of Birth</label>
+                        <label className="app-label">Date of Birth</label>
                         <input type="date" id="birthDate" name="birthDate" className="riser app-input"></input>
                     </div>
 
                     {/* Phone */}
                     <div className="col-md-4 input-area">
-                        <label>Phone</label>
+                        <label className="app-label">Phone</label>
                         <input type="tel" id="tel" name="tel" className="riser app-input"></input>
                     </div>
 
                     {/* Email */}
                     <div className="col-md-4 input-area">
-                        <label>Email</label>
+                        <label className="app-label">Email</label>
                         <input type="email" id="email" name="email" className="riser app-input"></input>
                     </div>
 
                     {/* Start Date */}
                     <div className="col-md-4 input-area">
-                        <label>When are you available to start?</label>
+                        <label className="app-label">When are you available to start?</label>
                         <input type="date" id="hireDate" name="hireDate" className="riser app-input"></input>
                     </div>
                 </div>
