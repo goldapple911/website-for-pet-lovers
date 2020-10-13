@@ -11,17 +11,23 @@ export default function User() {
     let currentPositions = [];
     let currentPositionsBlaine = [];
     let currentPositionsStillwater = [];
-    const [apply, setApply] = useState(false)
+    const [apply, setApply] = useState(false);
     const { currentUser } = useContext(AuthContext);
+    const [position, setPosition] = useState();
 
     useEffect(() => {
-        console.log(currentUser.displayName)
+        // Read all potential jobdata
         for (let i = 0; i < jobData.alljobs.length; i++) {
+            // Check to see if the job is currently hiring
             if (jobData.alljobs[i].available === true) {
+                // Push all jobs that are hiring to currentPositions
                 currentPositions.push(jobData.alljobs[i])
+                // Push all jobs hiring for Blaine to currentPositionsBlaine
                 if (jobData.alljobs[i].location === "Blaine") {
                     currentPositionsBlaine.push(jobData.alljobs[i])
-                } else if (jobData.alljobs[i].location === "Stillwater") {
+                }
+                // Push all jobs hiring for Stillwater to currentPositionsStillwater
+                else if (jobData.alljobs[i].location === "Stillwater") {
                     currentPositionsStillwater.push(jobData.alljobs[i])
                 }
             }
@@ -74,11 +80,10 @@ export default function User() {
                                     Leave Application
                                 </button>}
                         </div>
-
                     </div>
 
 
-                    {apply ? <Application /> :
+                    {apply ? <Application position={position} /> :
                         <div className="col-md-12 text-center">
                             <button type="button" className="btn btn-light btn-filter" onClick={handleLocationChange} value="all">All Locations</button>
                             <button type="button" className="btn btn-light btn-filter" onClick={handleLocationChange} value="Blaine">Blaine</button>
@@ -86,10 +91,11 @@ export default function User() {
 
                             <div className="row">
                                 {jobs.map((job) => (
-                                    <div className="col-lg-3 col-md-4 col-sm-6" onClick={() => { setApply(true) }} key={job.id}>
+                                    <div className="col-lg-3 col-md-4 col-sm-6" key={job.id}>
                                         <JobCard
                                             job={job}
                                         />
+                                    <div className="job-overlay" onClick={(e) => { setApply(true); setPosition(e.target.id) }} id={job.title+job.location}></div>
                                     </div>
                                 ))}
                             </div>

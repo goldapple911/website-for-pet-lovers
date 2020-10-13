@@ -5,7 +5,7 @@ export default function AppQuestion({ question }) {
         <div className="row">
             {/* Mapped question component */}
             <div className="col-md-12 input-area">
-                <label className="app-label" for="responsibilities">{question}</label>
+                <label className="app-label" htmlFor="responsibilities">{question}</label>
                 <textarea type="text" rows="4" name="responsibilities" className="riser app-input"></textarea>
             </div>
         </div>

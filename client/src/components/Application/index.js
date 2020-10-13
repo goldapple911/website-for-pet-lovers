@@ -3,20 +3,19 @@ import WorkHistory from '../WorkHistory'
 import AppQuestion from '../AppQuestion'
 import ApplicationContent from '../../utils/ApplicationContent'
 import "./application.css"
+import { v4 as uuidv4 } from 'uuid';
 
-export default function Application() {
+export default function Application({ position }) {
     const { content } = ApplicationContent;
     const [workHistory, setWorkHistory] = useState(0);
 
     // Need to set as empty and pass in from Careers but testing works 
-    const [selectedJob, setSelectedJob] = useState("Team Leader");
-    const [selectedLocation, setSelectedLocation] = useState("Blaine");
     const [questions, setQuestions] = useState([]);
 
     useEffect(() => {
         // useEffect hook to populate the questions on the application based off of selected job and location.
         for (let i = 0; i < content.length; i++) {
-            if (content[i].title === selectedJob && content[i].location === selectedLocation) {
+            if (content[i].title+content[i].location === position) {
                 setQuestions(content[i].questions)
             }
         }
@@ -81,7 +80,7 @@ export default function Application() {
                         : null}
                 </div>
                 {questions.map((question) => (
-                    <div>
+                    <div key={uuidv4()}>
                         <AppQuestion question={question} />
                     </div>
                 ))}
