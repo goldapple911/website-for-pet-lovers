@@ -64,13 +64,21 @@ export default function User() {
                             <p className="e-text">{currentUser.email}</p>
                             <button className="btn btn-light btn-filter sign-out" onClick={() => app.auth().signOut()}>Sign Out</button>
                             <button className="btn btn-light btn-filter edit" /*onClick={}*/>Edit Info</button>
-                            <h2 className="section-title">Available Positions</h2>
+                            {!apply ? null :
+
+                                <button
+                                    className="submit-btn btn btn-light btn-submit"
+                                    type="button"
+                                    onClick={() => { setApply(false) }}
+                                >
+                                    Leave Application
+                                </button>}
                         </div>
 
                     </div>
 
 
-                    {!apply ? <Application /> :
+                    {apply ? <Application /> :
                         <div className="col-md-12 text-center">
                             <button type="button" className="btn btn-light btn-filter" onClick={handleLocationChange} value="all">All Locations</button>
                             <button type="button" className="btn btn-light btn-filter" onClick={handleLocationChange} value="Blaine">Blaine</button>
@@ -78,7 +86,7 @@ export default function User() {
 
                             <div className="row">
                                 {jobs.map((job) => (
-                                    <div className="col-lg-3 col-md-4 col-sm-6" onClick={() => { console.log("Clicked") }} key={job.id}>
+                                    <div className="col-lg-3 col-md-4 col-sm-6" onClick={() => { setApply(true) }} key={job.id}>
                                         <JobCard
                                             job={job}
                                         />
