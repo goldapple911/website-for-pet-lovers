@@ -25,7 +25,7 @@ export default function Application() {
     return (
         <div className="application-form-wrapper">
             <form className="application-form">
-                <div className="row">
+                <div className="row application-section">
                     {/* First Name */}
                     <div className="col-md-4 input-area">
                         <label className="app-label">First Name</label>
@@ -62,24 +62,24 @@ export default function Application() {
                         <input type="date" id="hireDate" name="hireDate" className="riser app-input"></input>
                     </div>
                 </div>
-
-                {/* Expandable work history section */}
-                {workHistory > 0 ? <WorkHistory /> : null}
-                {workHistory > 1 ? <WorkHistory /> : null}
-                {workHistory > 2 ? <WorkHistory /> : null}
-                {workHistory < 3 ?
-                    <button
-                        className="submit-btn btn btn-light btn-submit"
-                        type="button"
-                        onClick={() => {
-                            setWorkHistory(workHistory + 1)
-                            console.log(workHistory)
-                        }}
-                    >
-                        + Experience
+                <div className="row application-section">
+                    {/* Expandable work history section */}
+                    {workHistory > 0 ? <WorkHistory /> : null}
+                    {workHistory > 1 ? <WorkHistory /> : null}
+                    {workHistory > 2 ? <WorkHistory /> : null}
+                    {workHistory < 3 ?
+                        <button
+                            className="submit-btn btn btn-light btn-submit"
+                            type="button"
+                            onClick={() => {
+                                setWorkHistory(workHistory + 1)
+                                console.log(workHistory)
+                            }}
+                        >
+                            + Experience
                 </button>
-                    : null}
-
+                        : null}
+                </div>
                 {questions.map((question) => (
                     <div>
                         <AppQuestion question={question} />
