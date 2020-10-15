@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "react-router-dom"
 import "./categoryJumbotron.css";
 import { v4 as uuidv4 } from 'uuid';
 
@@ -8,19 +9,20 @@ function CategoryJumbotron({ title, description }) {
         <div>
             <div className="category-text-section row">
                 <h1 className="display-4 main-txt category-title"><strong>{title}</strong></h1>
-                <hr className="my-4" />
+                <div className="category-description">
                 {description.map((desc) => (
                     <p className="lead main-txt p-spacing" key={uuidv4()}>
                         {desc}
                     </p>
                 ))}
+                </div>
             </div>
             <div className="row button-row">
                 <div className="col-md-6 txt-center">
-                    <button className="button">Shop Online</button>
+                    <a href="https://www.pointy.com/chains/atlas_pet_supply" target="_blank" className="button">Search Products</a>
                 </div>
                 <div className="col-md-6 txt-center">
-                    <button className="button">Shop Online</button>
+                    <a href="https://shop.atlaspet.net/products/shop/" target="_blank" className="button">Shop Online</a>
                 </div>
             </div>
         </div>
