@@ -6,7 +6,8 @@ const ClientContextProvider = (props) => {
   const [clientState, setClientState] = useState({
     category: "Category State Unset",
     currentUser: "User State Unset",
-    loggedIn: false
+    loggedIn: false,
+    role: "User Role Unset"
   })
 
   const changeCategory = (category) => {

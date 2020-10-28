@@ -16,7 +16,6 @@ function FormLogin({ toggleForm, history }) {
             await app
             .auth()
             .signInWithEmailAndPassword(formData.email, formData.password);
-            // history.push('/User-Page');
         } 
         catch (error) {
             console.log('Login Form Error: ', error);

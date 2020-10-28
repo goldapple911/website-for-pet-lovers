@@ -6,14 +6,20 @@ import JobCard from '../components/CardJob';
 import app from '../utils/firebase';
 import Application from '../components/Application'
 import { AuthContext } from '../utils/AuthContext';
+// import * as firebase from 'firebase/app';
+
 
 export default function User() {
     let currentPositions = [];
     let currentPositionsBlaine = [];
     let currentPositionsStillwater = [];
+
     const [apply, setApply] = useState(false);
     const { currentUser } = useContext(AuthContext);
     const [position, setPosition] = useState();
+
+    // Firebase State Testing
+    // const [firebaseUser, setFirebaseUser] = useState()
 
     useEffect(() => {
         // Read all potential jobdata
@@ -32,6 +38,15 @@ export default function User() {
                 }
             }
         }
+
+        // Firebase Testing
+        // const rootRef = firebase.database().ref().child('react');
+        // const userRef = rootRef.child('users');
+        // userRef.on('value', snap => {
+        //     setFirebaseUser(snap.val());
+        // });
+
+        console.log(currentUser)
         setJobState({
             all: currentPositions,
             Blaine: currentPositionsBlaine,
@@ -99,6 +114,7 @@ export default function User() {
                                     </div>
                                 ))}
                             </div>
+                            {/* <h1>{firebaseUser}</h1> */}
                         </div>
                     }
 

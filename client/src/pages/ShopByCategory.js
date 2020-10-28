@@ -14,6 +14,7 @@ export default function ShopByCategory() {
     const [title, setTitle] = useState("Local Title Unset");
     const [description, setDescription] = useState(["Local Description Unset"]);
     const { clientState } = useContext(ClientContext);
+    const [shopOnlineURL, setShopOnlineURL] = useState("")
 
     useEffect(() => {
         const dataset = websiteData.petCategories
@@ -23,6 +24,7 @@ export default function ShopByCategory() {
                 setCategory(dataset[i].category);
                 setTitle(dataset[i].categoryTitle);
                 setDescription(dataset[i].description);
+                setShopOnlineURL(dataset[i].onlineShopURL)
             }
         }
     },[clientState.category])
@@ -45,6 +47,7 @@ export default function ShopByCategory() {
                     <CategoryJumbotron
                         title={title}
                         description={description}
+                        shopOnlineURL={shopOnlineURL}
                     />
                 </div>
             </div>

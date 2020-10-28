@@ -23,7 +23,7 @@ export default {
             description: ["At Atlas Pet, we've got all your cat’s needs covered. We have an endless selection of food to satisfy any dietary needs or preferences from picky eating to allergies. Our friendly and knowledgeable staff are ready to help solve any issues with current foods. Are you looking for something specific? We can special order almost anything just for you.", "Our supplies and services don't end there. We also carry treats, leashes, collars, harnesses, toys, pet clothing, health aids, flea & tick medication, dental treats/products, and grooming supplies!", "We are confident that when you leave Atlas Pet, you'll leave with a smile and everything to fulfill your cat's needs!"],
             brandExamples: ["these", "are", "brand", "examples"],
             categoryTitle: "Everything for your Cat.",
-            onlineShopURL: ""
+            onlineShopURL: "https://shop.atlaspet.net/products/list/?categories=0004"
         },
         {   
             id: 3,
@@ -32,7 +32,7 @@ export default {
             description: ["At Atlas Pet, we've got all your pocket pets covered. With brands like Oxbow®, Sunseed®, Marshall's® and Kaytee®, we have an endless selection of food fit for mice, rats, gerbils, hamsters, guinea pigs, chinchillas, rabbits, ferrets, hedgehogs, and even sugar gliders. Are you looking for something specific? We can special order almost anything just for you.", "Our supplies and services don't end there. Our friendly and knowledgeable staff are ready to help answer questions about any small mammal. We also carry treats, harnesses, leashes, toys, health aids, and grooming supplies!", "We are confident that when you leave Atlas Pet, you'll leave with everything you need to enrich the life of your small mammal."],
             brandExamples: ["these", "are", "brand", "examples"],
             categoryTitle: "Everything for your Pocket Pet.",
-            onlineShopURL: ""
+            onlineShopURL: "https://shop.atlaspet.net/products/list/?categories=0006"
         },
         {   
             id: 4,
@@ -41,7 +41,7 @@ export default {
             description: ["At Atlas Pet, we've got all your bird needs covered. With brands like Sunseed®, ZuPreem®, and Pretty Bird®, we have an endless selection of food fit for Parakeets, Finches, Canaries, Conures, Cockatiels, Lovebirds, Macaws, African Greys, Cockatus, Doves and more! Are you looking for something specific? We can special order almost anything just for you.","Our supplies and services don't end there. Our friendly and knowledgeable staff are ready to help answer questions about any pet bird. We also carry cages, treats, harnesses, leashes, toys, health aids, and grooming supplies!", "We are confident that when you leave Atlas Pet, you'll leave with everything you need to enrich the life of your feathered friend."],
             brandExamples: ["these", "are", "brand", "examples"],
             categoryTitle: "Everything for your Bird.",
-            onlineShopURL: ""
+            onlineShopURL: "https://shop.atlaspet.net/products/list/?categories=0008"
         },
         {   
             id: 5,
@@ -50,7 +50,7 @@ export default {
             description: ["At Atlas Pet, we've got all your reptile needs covered. Not only do we carry a wide variety of live feeder insects, but we also stock some great pellet, soft, and canned food options for both insectivores and omnivores. With brands like ZooMed®, Exo Terra®, Fluker's®, and Zilla®, we are sure to have everything you need to meet the specific requirements of your unique reptile. Are you looking for something we don't carry? We can special order almost anything just for you.", "Our supplies and services don't end there. Our friendly and knowledgeable staff are ready to help answer questions about any reptile or amphibian. We also carry terrarium accessories, harnesses, heat lamps & bulbs, health aids, and cleaning supplies!", "We are confident that when you leave Atlas Pet, you'll leave with everything you need to keep your cold-blooded creature happy."],
             brandExamples: ["these", "are", "brand", "examples"],
             categoryTitle: "Everything for your Reptile.",
-            onlineShopURL: ""
+            onlineShopURL: "https://shop.atlaspet.net/products/list/?categories=0007"
         },
         {   
             id: 6,
@@ -59,7 +59,7 @@ export default {
             description: ["At Atlas Pet, we've got all your aquarium needs covered. Not only do we carry a wide variety of freshwater and saltwater fish, but we also stock tons of food, aquarium, decoration, and filtration options for all fish. With brands like Aqueon®, Marineland®, Hagen®, and Aquatop®, we are sure to have everything you need to meet the specific requirements of your unique aquarium. Are you looking for something we don't carry? We can special order almost anything just for you.", "Our supplies and services don't end there. Our friendly and knowledgeable staff are ready to help answer questions about any fish, plant, or filter. We also carry aquarium accessories, lights, covers, water conditioners, disease treatments, and cleaning supplies!", "We are confident that when you leave Atlas Pet, you'll leave with everything you need to keep your aquarium up and running."],
             brandExamples: ["these", "are", "brand", "examples"],
             categoryTitle: "Everything for your Aquarium.",
-            onlineShopURL: ""
+            onlineShopURL: "https://shop.atlaspet.net/products/list/?categories=0002"
         }
     ]
 }

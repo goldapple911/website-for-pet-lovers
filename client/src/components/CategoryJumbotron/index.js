@@ -3,7 +3,7 @@ import Link from "react-router-dom"
 import "./categoryJumbotron.css";
 import { v4 as uuidv4 } from 'uuid';
 
-function CategoryJumbotron({ title, description }) {
+function CategoryJumbotron({ title, description, shopOnlineURL }) {
     console.log(description)
     return (
         <div>
@@ -22,7 +22,7 @@ function CategoryJumbotron({ title, description }) {
                     <a href="https://www.pointy.com/chains/atlas_pet_supply" target="_blank" className="button">Search Products</a>
                 </div>
                 <div className="col-md-6 txt-center">
-                    <a href="https://shop.atlaspet.net/products/shop/" target="_blank" className="button">Shop Online</a>
+                    <a href={shopOnlineURL} target="_blank" className="button">Shop Online</a>
                 </div>
             </div>
         </div>
