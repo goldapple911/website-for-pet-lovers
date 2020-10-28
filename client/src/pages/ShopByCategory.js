@@ -6,6 +6,7 @@ import { ClientContext } from "../utils/ClientContext";
 import Background from '../components/Background';
 import CategoryJumbotron from '../components/CategoryJumbotron';
 import "./style.css"
+import { v4 as uuidv4 } from 'uuid';
 
 export default function ShopByCategory() {
     let history = useHistory();
@@ -27,23 +28,23 @@ export default function ShopByCategory() {
                 setShopOnlineURL(dataset[i].onlineShopURL)
             }
         }
-    },[clientState.category])
+    }, [clientState.category])
 
     if (clientState.category === "Category State Unset") {
         history.push('/')
     }
 
     return (
-        <main className="hide-overflow">
+        <main className="hide-overflow top">
             <Background />
-            <div className="row top">
-                <div className="col-md-4 single-card">
+            <div className="row">
+                <div className="col-lg-4 d-none d-lg-block single-card">
                     <CardSingle
                         src={link}
                         alt={category}
                     />
                 </div>
-                <div className="col-md-8 single-card">
+                <div className="col-lg-8 col-md-12 single-card p-2">
                     <CategoryJumbotron
                         title={title}
                         description={description}

@@ -7,8 +7,9 @@
 }
 
 .category-title {
-    font-size: 48px;
+    font-size: 36px;
     text-align: center;
+    line-height: 36px;
 }
 
 .category-text-section {
@@ -31,5 +32,10 @@
 }
 
 .category-description {
+    overflow-y: auto;
+}
 
+.product-btn {
+    margin-top: 8px;
+    margin-bottom: 8px;
 }

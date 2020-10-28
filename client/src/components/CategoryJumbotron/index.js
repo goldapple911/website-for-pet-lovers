@@ -18,10 +18,10 @@ function CategoryJumbotron({ title, description, shopOnlineURL }) {
                 </div>
             </div>
             <div className="row button-row">
-                <div className="col-md-6 txt-center">
+                <div className="col-md-6 txt-center product-btn">
                     <a href="https://www.pointy.com/chains/atlas_pet_supply" target="_blank" className="button">Search Products</a>
                 </div>
-                <div className="col-md-6 txt-center">
+                <div className="col-md-6 txt-center product-btn">
                     <a href={shopOnlineURL} target="_blank" className="button">Shop Online</a>
                 </div>
             </div>

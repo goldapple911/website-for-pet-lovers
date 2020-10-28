@@ -22,7 +22,6 @@
 
 .main-txt {
     position: relative;
-    line-height: 33px;
     color: lightgray;
     z-index: 1;
 }
