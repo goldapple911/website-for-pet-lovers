@@ -1,4 +1,8 @@
-import * as firebase from 'firebase/app';
+// Importing firebase SDK
+import firebase from 'firebase/app';
+// Importing firestore database
+import 'firebase/firestore';
+// Importing firebase user authentication
 import 'firebase/auth';
 
 // Configuration for firebase
@@ -13,6 +17,6 @@ var config = {
     appId: "1:235788116248:web:5d757793fc83da82a87e6d",
     measurementId: "G-XQ1B3FKZXT"
   };
-  const app = firebase.initializeApp(config);
+  const fbApp = firebase.initializeApp(config);
 
-  export default app
+  export default fbApp

@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { withRouter } from 'react-router';
-import app from '../../utils/firebase';
+import fbApp from '../../utils/firebase';
 import "./formSignup.css";
 
 function FormSignup({ toggleForm, history }) {
+
+    const firestore = fbApp.firestore();
+    const auth = fbApp.auth();
+
     const [formData, setFormData] = useState({
         email: "",
         password: "",
@@ -11,26 +15,27 @@ function FormSignup({ toggleForm, history }) {
     });
 
     // Function to sign up user via firebase.
-      const handleSignUp =
+    const handleSignUp =
         async event => {
-        const { password, retypePassword } = formData
-        if (password !== retypePassword) {
-            alert("Your passwords do not match")
-            return
-        }
-        console.log(formData)
-        event.preventDefault();
-        try {
-            await app
-            .auth()
-            .createUserWithEmailAndPassword(formData.email, formData.password);
-            history.push('/User-Page');
-        } 
-        catch (error) {
-            console.log('Signup Form Error: ', error);
-        }
-    };
-    
+            const { password, retypePassword } = formData
+            if (password !== retypePassword) {
+                alert("Your passwords do not match")
+                return
+            }
+
+            event.preventDefault();
+            try {
+                await fbApp
+                    .auth()
+                    .createUserWithEmailAndPassword(formData.email, formData.password);
+                
+                history.push('/User-Page');
+            }
+            catch (error) {
+                console.log('Signup Form Error: ', error);
+            }
+        };
+
     function handleNameChange(e) {
         console.log(formData)
         setFormData({ ...formData, name: e.target.value })
@@ -91,7 +96,7 @@ function FormSignup({ toggleForm, history }) {
                     onClick={handleSignUp}
                 >Submit</button>
                 <p className="lead signup-login-txt">Already have an account? <button className="text-button" type="button" onClick={toggleForm}>
-                        Login Here
+                    Login Here
                     </button>
                 </p>
             </form>

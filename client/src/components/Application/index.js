@@ -5,7 +5,7 @@ import ApplicationContent from '../../utils/ApplicationContent'
 import "./application.css"
 import { v4 as uuidv4 } from 'uuid';
 
-export default function Application({ position }) {
+export default function Application({ position, setApply }) {
     const { content } = ApplicationContent;
     const [workHistory, setWorkHistory] = useState(0);
 
@@ -15,15 +15,25 @@ export default function Application({ position }) {
     useEffect(() => {
         // useEffect hook to populate the questions on the application based off of selected job and location.
         for (let i = 0; i < content.length; i++) {
-            if (content[i].title+content[i].location === position) {
+            if (content[i].title + ": " + content[i].location === position) {
                 setQuestions(content[i].questions)
             }
         }
     }, [])
 
     return (
-        <div className="application-form-wrapper">
+        <main className="application-form-wrapper">
             <form className="application-form">
+                <h1 className="app-title">{position}</h1>
+
+                <button
+                    className="submit-btn btn btn-light btn-submit close-btn"
+                    type="button"
+                    onClick={() => { setApply(false) }}
+                >
+                    X
+                </button>
+
                 <div className="row application-section">
                     {/* First Name */}
                     <div className="col-md-4 input-area">
@@ -85,6 +95,6 @@ export default function Application({ position }) {
                     </div>
                 ))}
             </form>
-        </div>
+        </main>
     )
 }

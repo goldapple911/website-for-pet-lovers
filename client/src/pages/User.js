@@ -39,13 +39,6 @@ export default function User() {
             }
         }
 
-        // Firebase Testing
-        // const rootRef = firebase.database().ref().child('react');
-        // const userRef = rootRef.child('users');
-        // userRef.on('value', snap => {
-        //     setFirebaseUser(snap.val());
-        // });
-
         console.log(currentUser)
         setJobState({
             all: currentPositions,
@@ -85,20 +78,11 @@ export default function User() {
                             <p className="e-text">{currentUser.email}</p>
                             <button className="btn btn-light btn-filter sign-out" onClick={() => app.auth().signOut()}>Sign Out</button>
                             <button className="btn btn-light btn-filter edit" /*onClick={}*/>Edit Info</button>
-                            {!apply ? null :
-
-                                <button
-                                    className="submit-btn btn btn-light btn-submit"
-                                    type="button"
-                                    onClick={() => { setApply(false) }}
-                                >
-                                    Leave Application
-                                </button>}
                         </div>
                     </div>
 
 
-                    {apply ? <Application position={position} /> :
+                    {apply ? <Application position={position} setApply={setApply}/> :
                         <div className="col-md-12 text-center">
                             <button type="button" className="btn btn-light btn-filter" onClick={handleLocationChange} value="all">All Locations</button>
                             <button type="button" className="btn btn-light btn-filter" onClick={handleLocationChange} value="Blaine">Blaine</button>
@@ -110,11 +94,10 @@ export default function User() {
                                         <JobCard
                                             job={job}
                                         />
-                                    <div className="job-overlay" onClick={(e) => { setApply(true); setPosition(e.target.id) }} id={job.title+job.location}></div>
+                                    <div className="job-overlay" onClick={(e) => { setApply(true); setPosition(e.target.id) }} id={job.title + ": " + job.location}></div>
                                     </div>
                                 ))}
                             </div>
-                            {/* <h1>{firebaseUser}</h1> */}
                         </div>
                     }
 
