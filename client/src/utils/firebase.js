@@ -18,5 +18,6 @@ var config = {
     measurementId: "G-XQ1B3FKZXT"
   };
   const fbApp = firebase.initializeApp(config);
+  var db = firebase.firestore(fbApp)
 
   export default fbApp

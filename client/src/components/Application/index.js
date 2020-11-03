@@ -4,10 +4,17 @@ import AppQuestion from '../AppQuestion'
 import ApplicationContent from '../../utils/ApplicationContent'
 import "./application.css"
 import { v4 as uuidv4 } from 'uuid';
+import app from '../../utils/firebase';
+// Importing firebase SDK
+import firebase from 'firebase/app';
+// Importing firestore database
+import 'firebase/firestore';
 
 export default function Application({ position, setApply }) {
     const { content } = ApplicationContent;
     const [workHistory, setWorkHistory] = useState(0);
+
+    var db = firebase.firestore(app)
 
     // Need to set as empty and pass in from Careers but testing works 
     const [questions, setQuestions] = useState([]);
@@ -20,6 +27,20 @@ export default function Application({ position, setApply }) {
             }
         }
     }, [])
+
+    const handleApplicationSubmit = (e) => {
+        e.preventDefault()
+        db.collection("applications").doc("test: need to change").set({
+            data1: "LALALA",
+            data2: "BAABAABAA"
+        })
+        .then(function() {
+            console.log("Document successfully written!");
+        })
+        .catch(function(error) {
+            console.error("Error writing document: ", error);
+        });
+    }
 
     return (
         <main className="application-form-wrapper">
@@ -94,6 +115,13 @@ export default function Application({ position, setApply }) {
                         <AppQuestion question={question} />
                     </div>
                 ))}
+                <button 
+                type="submit"
+                className="submit-btn btn btn-light btn-submit"
+                onClick={handleApplicationSubmit}
+                >
+                    Submit Application
+                </button>
             </form>
         </main>
     )

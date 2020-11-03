@@ -3,7 +3,7 @@ import { Redirect } from 'react-router';
 import app from '../../utils/firebase';
 import { AuthContext } from '../../utils/AuthContext'
 
-function FormLogin({ toggleForm, history }) {
+function FormLogin({ toggleForm }) {
     const [formData, setFormData] = useState({
         email: "",
         password: "",
