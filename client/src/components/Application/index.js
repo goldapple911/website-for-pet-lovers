@@ -10,7 +10,7 @@ import firebase from 'firebase/app';
 // Importing firestore database
 import 'firebase/firestore';
 
-export default function Application({ position, setApply }) {
+export default function Application({ position, setApply, currentUser }) {
     const { content } = ApplicationContent;
     const [workHistory, setWorkHistory] = useState(0);
 
@@ -30,9 +30,11 @@ export default function Application({ position, setApply }) {
 
     const handleApplicationSubmit = (e) => {
         e.preventDefault()
-        db.collection("applications").doc("test: need to change").set({
-            data1: "LALALA",
-            data2: "BAABAABAA"
+        db.collection("applications").doc(currentUser.uid).set({
+            name: currentUser.displayName,
+            email: currentUser.email,
+            phone: currentUser.phoneNumber,
+            updated: firebase.firestore.FieldValue.serverTimestamp()
         })
         .then(function() {
             console.log("Document successfully written!");

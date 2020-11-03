@@ -82,7 +82,7 @@ export default function User() {
                     </div>
 
 
-                    {apply ? <Application position={position} setApply={setApply}/> :
+                    {apply ? <Application position={position} currentUser={currentUser} setApply={setApply}/> :
                         <div className="col-md-12 text-center">
                             <button type="button" className="btn btn-light btn-filter" onClick={handleLocationChange} value="all">All Locations</button>
                             <button type="button" className="btn btn-light btn-filter" onClick={handleLocationChange} value="Blaine">Blaine</button>
