@@ -30,7 +30,7 @@ export default function Application({ position, setApply, currentUser }) {
 
     const handleApplicationSubmit = (e) => {
         e.preventDefault()
-        db.collection("applications").doc(currentUser.uid).set({
+        db.collection("applications").doc(currentUser.uid).collection("userData").doc("user").set({
             name: currentUser.displayName,
             email: currentUser.email,
             phone: currentUser.phoneNumber,

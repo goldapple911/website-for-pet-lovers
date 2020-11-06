@@ -18,8 +18,7 @@ export default function User() {
     const { currentUser } = useContext(AuthContext);
     const [position, setPosition] = useState();
 
-    // Firebase State Testing
-    // const [firebaseUser, setFirebaseUser] = useState()
+    const [editUser, setEditUser] = useState(false);
 
     useEffect(() => {
         // Read all potential jobdata
@@ -74,10 +73,10 @@ export default function User() {
                     <div className="job-section-overlay"></div>
                     <div className="row">
                         <div className="col-md-12 text-center job-header">
-                            <h1 className="section-title">{currentUser.displayName ? currentUser.displayName : "User"}</h1>
+                            <h1 className="section-title">{!editUser ? currentUser.displayName : <><input placeholder="Enter full name" /><button>save</button></>}</h1>
                             <p className="e-text">{currentUser.email}</p>
                             <button className="btn btn-light btn-filter sign-out" onClick={() => app.auth().signOut()}>Sign Out</button>
-                            <button className="btn btn-light btn-filter edit" /*onClick={}*/>Edit Info</button>
+                            <button className="btn btn-light btn-filter edit" onClick={() => {if(editUser){setEditUser(false)} else{setEditUser(true)}}} >Edit Info</button>
                         </div>
                     </div>
 
