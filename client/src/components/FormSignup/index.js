@@ -5,11 +5,13 @@ import "./formSignup.css";
 
 function FormSignup({ toggleForm, history }) {
 
-    const firestore = fbApp.firestore();
-    const auth = fbApp.auth();
+    // const firestore = fbApp.firestore();
+    // const auth = fbApp.auth();
 
     const [formData, setFormData] = useState({
         email: "",
+        name: "",
+        phone: "",
         password: "",
         retypePassword: ""
     });
@@ -41,6 +43,11 @@ function FormSignup({ toggleForm, history }) {
         setFormData({ ...formData, name: e.target.value })
     };
 
+    function handlePhoneChange(e) {
+        console.log(formData)
+        setFormData({ ...formData, phone: e.target.value })
+    };
+
     function handleEmailChange(e) {
         setFormData({ ...formData, email: e.target.value })
     };
@@ -67,6 +74,29 @@ function FormSignup({ toggleForm, history }) {
                     id="email"
                     name="email"
                     onChange={handleEmailChange}
+                    required
+                ></input>
+
+                {/* FullName input */}
+                <label htmlFor="name">Full Name</label>
+                <input
+                    className="inputs"
+                    type="text"
+                    id="name"
+                    name="name"
+                    onChange={handleNameChange}
+                    required
+                ></input>
+
+                {/* Phone input */}
+                <label htmlFor="phone">Phone Number</label>
+                <input
+                    className="inputs"
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    onChange={handlePhoneChange}
+                    required
                 ></input>
 
                 {/* Password input */}
@@ -77,6 +107,7 @@ function FormSignup({ toggleForm, history }) {
                     id="password"
                     name="password"
                     onChange={handlePasswordChange}
+                    required
                 ></input>
 
                 {/* Password Confirmation input */}
@@ -87,6 +118,7 @@ function FormSignup({ toggleForm, history }) {
                     id="retype-password"
                     name="retype-password"
                     onChange={handleRetypePasswordChange}
+                    required
                 ></input>
 
                 {/* Submit button */}

@@ -36,12 +36,12 @@ export default function Application({ position, setApply, currentUser }) {
             phone: currentUser.phoneNumber,
             updated: firebase.firestore.FieldValue.serverTimestamp()
         })
-        .then(function() {
-            console.log("Document successfully written!");
-        })
-        .catch(function(error) {
-            console.error("Error writing document: ", error);
-        });
+            .then(function () {
+                console.log("Document successfully written!");
+            })
+            .catch(function (error) {
+                console.error("Error writing document: ", error);
+            });
     }
 
     return (
@@ -96,20 +96,22 @@ export default function Application({ position, setApply, currentUser }) {
                 </div>
                 <div className="row application-section">
                     {/* Expandable work history section */}
-                    {workHistory > 0 ? <WorkHistory /> : null}
-                    {workHistory > 1 ? <WorkHistory /> : null}
-                    {workHistory > 2 ? <WorkHistory /> : null}
+                    {workHistory > 0 ? <WorkHistory historyItem={1} db={db} currentUser={currentUser} /> : null}
+                    {workHistory > 1 ? <WorkHistory historyItem={2} db={db} currentUser={currentUser} /> : null}
+                    {workHistory > 2 ? <WorkHistory historyItem={3} db={db} currentUser={currentUser} /> : null}
                     {workHistory < 3 ?
-                        <button
-                            className="submit-btn btn btn-light btn-submit"
-                            type="button"
-                            onClick={() => {
-                                setWorkHistory(workHistory + 1)
-                                console.log(workHistory)
-                            }}
-                        >
-                            + Experience
-                </button>
+                        <div>
+                            <button
+                                className="submit-btn btn btn-light btn-submit"
+                                type="button"
+                                onClick={() => {
+                                    setWorkHistory(workHistory + 1)
+                                    console.log(workHistory)
+                                }}
+                            >
+                                + Experience
+                            </button>
+                        </div>
                         : null}
                 </div>
                 {questions.map((question) => (
@@ -117,10 +119,10 @@ export default function Application({ position, setApply, currentUser }) {
                         <AppQuestion question={question} />
                     </div>
                 ))}
-                <button 
-                type="submit"
-                className="submit-btn btn btn-light btn-submit"
-                onClick={handleApplicationSubmit}
+                <button
+                    type="submit"
+                    className="submit-btn btn btn-light btn-submit"
+                    onClick={handleApplicationSubmit}
                 >
                     Submit Application
                 </button>
