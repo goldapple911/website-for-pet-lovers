@@ -25,7 +25,7 @@ export default {
         {
             id: "3",
             location: "Blaine",
-            title: "Service Associate",
+            title: "Morning Service Associate",
             availability: "Mornings 7:30am-3:00pm.",
             classification: "Part time: up to 20 hrs/wk.",
             description: "Learn to handle and care for a variety of animals. Gain experience in a sales and service oriented position while being a supportive member of a high-energy team. Help care for the people and animals of Minnesota!",
@@ -36,7 +36,7 @@ export default {
         {
             id: "4",
             location: "Blaine",
-            title: "Service Associate",
+            title: "Evening Service Associate",
             classification: "Part time: up to 20 hrs/wk.",
             availability: "Evenings M-F 2:30pm-8:30pm, and weekends 9:00am-6:00pm.",
             description: "Learn to handle and care for a variety of animals. Gain experience in a sales and service oriented position while being a supportive member of a high-energy team. Help care for the people and animals of Minnesota!",
@@ -69,7 +69,7 @@ export default {
         {
             id: "7",
             location: "Stillwater",
-            title: "Service Associate",
+            title: "Morning Service Associate",
             availability: "Mornings 7:30am-3:00pm.",
             classification: "Part time: up to 20 hrs/wk.",
             description: "Learn to handle and care for a variety of animals. Gain experience in a sales and service oriented position while being a supportive member of a high-energy team. Help care for the people and animals of Minnesota!",
@@ -80,7 +80,7 @@ export default {
         {
             id: "8",
             location: "Stillwater",
-            title: "Service Associate",
+            title: "Evening Service Associate",
             classification: "Part time: up to 20 hrs/wk.",
             availability: "Evenings M-F 2:30pm-8:30pm, and weekends 9:00am-6:00pm.",
             description: "Learn to handle and care for a variety of animals. Gain experience in a sales and service oriented position while being a supportive member of a high-energy team. Help care for the people and animals of Minnesota!",
