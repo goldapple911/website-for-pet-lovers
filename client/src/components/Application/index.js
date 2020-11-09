@@ -3,7 +3,6 @@ import WorkHistory from '../WorkHistory'
 import AppQuestion from '../AppQuestion'
 import ApplicationContent from '../../utils/ApplicationContent'
 import "./application.css"
-import { v4 as uuidv4 } from 'uuid';
 import app from '../../utils/firebase';
 // Importing firebase SDK
 import firebase from 'firebase/app';
@@ -30,10 +29,7 @@ export default function Application({ position, setApply, currentUser }) {
 
     const handleApplicationSubmit = (e) => {
         e.preventDefault()
-        db.collection("applications").doc(currentUser.uid).collection("userData").doc("user").set({
-            name: currentUser.displayName,
-            email: currentUser.email,
-            phone: currentUser.phoneNumber,
+        db.collection("applications").doc(currentUser.uid).collection(position).doc("applicant").set({
             updated: firebase.firestore.FieldValue.serverTimestamp()
         })
             .then(function () {
@@ -114,9 +110,9 @@ export default function Application({ position, setApply, currentUser }) {
                         </div>
                         : null}
                 </div>
-                {questions.map((question) => (
-                    <div key={uuidv4()}>
-                        <AppQuestion question={question} />
+                {questions.map((question, i) => (
+                    <div key={i}>
+                        <AppQuestion qid={i} question={question} db={db} currentUser={currentUser} position={position} />
                     </div>
                 ))}
                 <button
