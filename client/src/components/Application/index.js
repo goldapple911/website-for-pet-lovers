@@ -27,10 +27,50 @@ export default function Application({ position, setApply, currentUser }) {
         }
     }, [])
 
+    const [applicantInfo, setApplicantInfo] = useState({
+        fname: "",
+        lname: "",
+        dob: "",
+        phone: "",
+        email: "",
+        start: "",
+        updated: firebase.firestore.FieldValue.serverTimestamp()
+    });
+
+    function handleFnameChange(e) {
+        console.log(workHistory);
+        setApplicantInfo({ ...applicantInfo, fname: e.target.value });
+    };
+
+    function handleLnameChange(e) {
+        console.log(applicantInfo);
+        setApplicantInfo({ ...applicantInfo, lname: e.target.value });
+    };
+
+    function handleDobChange(e) {
+        console.log(applicantInfo);
+        setApplicantInfo({ ...applicantInfo, dob: e.target.value });
+    };
+
+    function handlePhoneChange(e) {
+        console.log(applicantInfo);
+        setApplicantInfo({ ...applicantInfo, phone: e.target.value });
+    };
+
+    function handleEmailChange(e) {
+        console.log(applicantInfo);
+        setApplicantInfo({ ...applicantInfo, email: e.target.value });
+    };
+
+    function handleStartChange(e) {
+        console.log(applicantInfo);
+        setApplicantInfo({ ...applicantInfo, start: e.target.value });
+    };
+
     const handleApplicationSubmit = (e) => {
         e.preventDefault()
         db.collection("applications").doc(currentUser.uid).collection(position).doc("applicant").set({
-            updated: firebase.firestore.FieldValue.serverTimestamp()
+            ...applicantInfo
         })
             .then(function () {
                 console.log("Document successfully written!");
@@ -57,37 +97,37 @@ export default function Application({ position, setApply, currentUser }) {
                     {/* First Name */}
                     <div className="col-md-4 input-area">
                         <label className="app-label">First Name</label>
-                        <input type="text" id="fname" name="fname" className="riser app-input"></input>
+                        <input onChange={handleFnameChange} type="text" id="fname" name="fname" className="riser app-input"></input>
                     </div>
 
                     {/* Last Name */}
                     <div className="col-md-4 input-area">
                         <label className="app-label">Last Name</label>
-                        <input type="text" id="lname" name="lname" className="riser app-input"></input>
+                        <input onChange={handleLnameChange} type="text" id="lname" name="lname" className="riser app-input"></input>
                     </div>
 
                     {/* Date of Birth */}
                     <div className="col-md-4 input-area">
                         <label className="app-label">Date of Birth</label>
-                        <input type="date" id="birthDate" name="birthDate" className="riser app-input"></input>
+                        <input onChange={handleDobChange} type="date" id="birthDate" name="birthDate" className="riser app-input"></input>
                     </div>
 
                     {/* Phone */}
                     <div className="col-md-4 input-area">
                         <label className="app-label">Phone</label>
-                        <input type="tel" id="tel" name="tel" className="riser app-input"></input>
+                        <input  onChange={handlePhoneChange} type="tel" id="tel" name="tel" className="riser app-input"></input>
                     </div>
 
                     {/* Email */}
                     <div className="col-md-4 input-area">
                         <label className="app-label">Email</label>
-                        <input type="email" id="email" name="email" className="riser app-input"></input>
+                        <input onChange={handleEmailChange} type="email" id="email" name="email" className="riser app-input"></input>
                     </div>
 
                     {/* Start Date */}
                     <div className="col-md-4 input-area">
                         <label className="app-label">When are you available to start?</label>
-                        <input type="date" id="hireDate" name="hireDate" className="riser app-input"></input>
+                        <input onChange={handleStartChange} type="date" id="hireDate" name="hireDate" className="riser app-input"></input>
                     </div>
                 </div>
                 <div className="row application-section">
