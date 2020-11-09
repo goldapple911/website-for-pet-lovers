@@ -77,28 +77,6 @@ function FormSignup({ toggleForm, history }) {
                     required
                 ></input>
 
-                {/* FullName input */}
-                <label htmlFor="name">Full Name</label>
-                <input
-                    className="inputs"
-                    type="text"
-                    id="name"
-                    name="name"
-                    onChange={handleNameChange}
-                    required
-                ></input>
-
-                {/* Phone input */}
-                <label htmlFor="phone">Phone Number</label>
-                <input
-                    className="inputs"
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    onChange={handlePhoneChange}
-                    required
-                ></input>
-
                 {/* Password input */}
                 <label htmlFor="password">Password</label>
                 <input

@@ -96,9 +96,9 @@ export default function Application({ position, setApply, currentUser }) {
                 </div>
                 <div className="row application-section">
                     {/* Expandable work history section */}
-                    {workHistory > 0 ? <WorkHistory historyItem={1} db={db} currentUser={currentUser} /> : null}
-                    {workHistory > 1 ? <WorkHistory historyItem={2} db={db} currentUser={currentUser} /> : null}
-                    {workHistory > 2 ? <WorkHistory historyItem={3} db={db} currentUser={currentUser} /> : null}
+                    {workHistory > 0 ? <WorkHistory historyItem={1} db={db} currentUser={currentUser} position={position} /> : null}
+                    {workHistory > 1 ? <WorkHistory historyItem={2} db={db} currentUser={currentUser} position={position} /> : null}
+                    {workHistory > 2 ? <WorkHistory historyItem={3} db={db} currentUser={currentUser} position={position} /> : null}
                     {workHistory < 3 ?
                         <div>
                             <button

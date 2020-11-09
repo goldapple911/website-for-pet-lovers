@@ -127,6 +127,7 @@ label {
 .job-header {
     background-color: rgb(41, 41, 41);
     padding: 15px;
+    height: 50px;
     border-radius: 10px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
@@ -182,13 +183,13 @@ opacity: 50%;
 .sign-out {
  position: absolute;
  right: 25px;
- top: 10px;
+ top: 0px;
 }
 
 .edit {
     position: absolute;
     left: 25px;
-    top: 10px;
+    top: 0px;
 }
 
 .user-page {

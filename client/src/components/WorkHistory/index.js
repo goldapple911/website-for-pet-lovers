@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './workhistory.css'
 
-export default function WorkHistory({ historyItem, db, currentUser }) {
+export default function WorkHistory({ historyItem, db, currentUser, position }) {
     const [workHistory, setWorkHistory] = useState({
         company: "",
         title: "",
@@ -49,7 +49,8 @@ export default function WorkHistory({ historyItem, db, currentUser }) {
 
 
     const handleUpdate = () => {
-            db.collection("applications").doc(currentUser.uid).collection("workHistory").doc(`${historyItem}`).set({
+        // Storing applications by grouping application field data under the position and location applied for.
+            db.collection("applications").doc(currentUser.uid).collection(position).doc(`Work History ${historyItem}`).set({
                 workHistory: workHistory
             })
                 .then(function () {

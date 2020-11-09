@@ -72,11 +72,9 @@ export default function User() {
                 <div className="col-md-12 job-section user-page">
                     <div className="job-section-overlay"></div>
                     <div className="row">
-                        <div className="col-md-12 text-center job-header">
-                            <h1 className="section-title">{!editUser ? currentUser.displayName : <><input placeholder="Enter full name" /><button>save</button></>}</h1>
-                            <p className="e-text">{currentUser.email}</p>
+                        <div className="col-md-12 text-center job-header">   
                             <button className="btn btn-light btn-filter sign-out" onClick={() => app.auth().signOut()}>Sign Out</button>
-                            <button className="btn btn-light btn-filter edit" onClick={() => {if(editUser){setEditUser(false)} else{setEditUser(true)}}} >Edit Info</button>
+                            <button className="btn btn-light btn-filter edit" onClick={() => {if(editUser){setEditUser(false)} else{setEditUser(true)}}} >Account</button>
                         </div>
                     </div>
 
