@@ -7,7 +7,7 @@ import app from '../utils/firebase';
 import Application from '../components/Application'
 import { AuthContext } from '../utils/AuthContext';
 import firebase from 'firebase/app';
-import { useCollectionData } from 'react-firebase-hooks/firestore';
+import { useCollectionDataOnce } from 'react-firebase-hooks/firestore';
 // import * as firebase from 'firebase/app';
 
 
@@ -20,8 +20,18 @@ export default function User() {
 
     const managerRef = db.collection("managers")
 
-    const [managerList] = useCollectionData(managerRef)
-    // console.log(managerList)
+    db.collection("managers")
+    .get()
+    .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            console.log(doc.data().uid)
+            if (doc.data().uid === currentUser.uid) {
+                setIsManager(true)
+            } else {
+                
+            }
+        })
+    })
 
 
     const [apply, setApply] = useState(false);
@@ -30,23 +40,10 @@ export default function User() {
     const [isManager, setIsManager] = useState(false);
     const [managerLocation, setManagerLocation] = useState("")
 
-    const checkForManager = (managerList) => {
-        // For loop to check currentUser for manager status
-        if (managerList) {
-            for (let x = 0; x < managerList.length; x++) {
-                if (managerList[x].uid === currentUser.uid) {
-                    setIsManager(true)
-                    console.log("success")
-                }
-
-            }
-        }
-    }
-
     const [editUser, setEditUser] = useState(false);
 
     useEffect(() => {
-
+        
         // For loop to populate state with current job openings
         // Read all potential jobdata
         for (let i = 0; i < jobData.alljobs.length; i++) {
@@ -65,7 +62,7 @@ export default function User() {
             }
         }
 
-        console.log(currentUser)
+        // console.log(currentUser)
         setJobState({
             all: currentPositions,
             Blaine: currentPositionsBlaine,
@@ -92,6 +89,7 @@ export default function User() {
         }
     }
 
+    // console.log(managerList)
     return (
         <main className="hide-overflow">
             <Background />
