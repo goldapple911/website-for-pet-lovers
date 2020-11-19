@@ -50,7 +50,7 @@ export default function WorkHistory({ historyItem, db, currentUser, position }) 
 
     const handleUpdate = () => {
         // Storing applications by grouping application field data under the position and location applied for.
-            db.collection("applications").doc(currentUser.uid).collection(position).doc(`Work History ${historyItem}`).set({
+            db.collection("applications").doc(currentUser.uid).collection("history").doc(`Work History ${historyItem}`).set({
                 workHistory: workHistory
             })
                 .then(function () {
