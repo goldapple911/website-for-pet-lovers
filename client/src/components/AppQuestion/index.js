@@ -14,7 +14,7 @@ export default function AppQuestion({ qid, question, currentUser, db, position }
 
     const handleUpdate = () => {
         // Storing applications by grouping application field data under the position and location applied for.
-            db.collection("applications").doc(currentUser.uid).collection(position).doc(`Question ${qid}`).set({
+            db.collection("applications").doc(currentUser.uid).collection("questions").doc(`Question ${qid}`).set({
                 questionResponse: questionResponse
             })
                 .then(function () {

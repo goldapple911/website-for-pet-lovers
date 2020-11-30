@@ -28,6 +28,7 @@ export default function Application({ position, setApply, currentUser }) {
     }, [])
 
     const [applicantInfo, setApplicantInfo] = useState({
+        position: position,
         fname: "",
         lname: "",
         dob: "",
@@ -69,7 +70,7 @@ export default function Application({ position, setApply, currentUser }) {
 
     const handleApplicationSubmit = (e) => {
         e.preventDefault()
-        db.collection("applications").doc(currentUser.uid).collection(position).doc("applicant").set({
+        db.collection("applications").doc(currentUser.uid).set({
             ...applicantInfo
         })
             .then(function () {
