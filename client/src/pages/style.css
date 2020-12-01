@@ -210,3 +210,37 @@ opacity: 50%;
     left: 0px;
     right: 0px;
 }
+
+/* Manager Display */
+.size-24 {
+    font-size: 24px;
+}
+
+.size-20 {
+    font-size: 20px;
+}
+
+.app-list {
+    background-color: rgb(41, 41, 41);
+    color: lightgray;
+}
+
+.app-list-item:hover {
+    background-color: rgb(56, 56, 56);
+}
+
+.app-li-border {
+    border-bottom: lightgray;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+.app-header-border {
+    border-bottom: lightgray;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+.app-li-border:hover {
+    border: unset;
+}

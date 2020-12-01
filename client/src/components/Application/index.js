@@ -35,7 +35,8 @@ export default function Application({ position, setApply, currentUser }) {
         phone: "",
         email: "",
         start: "",
-        updated: firebase.firestore.FieldValue.serverTimestamp()
+        updated: firebase.firestore.FieldValue.serverTimestamp(),
+        uid: currentUser.uid
     });
 
     function handleFnameChange(e) {
