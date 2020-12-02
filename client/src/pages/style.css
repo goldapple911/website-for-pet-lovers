@@ -221,12 +221,12 @@ opacity: 50%;
 }
 
 .app-list {
-    background-color: rgb(41, 41, 41);
-    color: lightgray;
+    background-color: white;
+    /* color: lightgray; */
 }
 
 .app-list-item:hover {
-    background-color: rgb(56, 56, 56);
+    background-color: rgb(172, 172, 172);
 }
 
 .app-li-border {

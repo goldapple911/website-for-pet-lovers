@@ -73,7 +73,7 @@ export default function Application({ position, setApply, currentUser }) {
         e.preventDefault()
         db.collection("applications").doc(currentUser.uid).set({
             ...applicantInfo
-        })
+        }, { merge: true })
             .then(function () {
                 console.log("Document successfully written!");
             })
