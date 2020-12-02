@@ -14,15 +14,16 @@ export default function AppQuestion({ qid, question, currentUser, db, position }
 
     const handleUpdate = () => {
         // Storing applications by grouping application field data under the position and location applied for.
-            db.collection("applications").doc(currentUser.uid).collection("questions").doc(`Question ${qid}`).set({
-                questionResponse: questionResponse
+
+        db.collection("applications").doc(currentUser.uid).set({
+            ["Question:" + qid]: questionResponse
+        }, { merge: true })
+            .then(function () {
+                console.log("Document successfully written!")
             })
-                .then(function () {
-                    console.log("Document successfully written!");
-                })
-                .catch(function (error) {
-                    console.error("Error writing document: ", error);
-                });
+            .catch(function (error) {
+                console.error("Error writing document: ", error)
+            });
     }
 
     return (

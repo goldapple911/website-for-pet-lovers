@@ -50,38 +50,16 @@ export default function WorkHistory({ historyItem, db, currentUser, position }) 
 
     const handleUpdate = () => {
         // Storing applications by grouping application field data under the position and location applied for.
-        if (historyItem === 1) {
-            db.collection("applications").doc(currentUser.uid).set({
-                workHistory1: workHistory
-            }, { merge: true })
-                .then(function () {
-                    console.log("Document successfully written!");
-                })
-                .catch(function (error) {
-                    console.error("Error writing document: ", error);
-                });
 
-        } else if (historyItem === 2) {
-            db.collection("applications").doc(currentUser.uid).set({
-                workHistory2: workHistory
-            }, { merge: true })
-                .then(function () {
-                    console.log("Document successfully written!");
-                })
-                .catch(function (error) {
-                    console.error("Error writing document: ", error);
-                });
-        } else if (historyItem === 3) {
-            db.collection("applications").doc(currentUser.uid).set({
-                workHistory3: workHistory
-            }, { merge: true })
-                .then(function () {
-                    console.log("Document successfully written!");
-                })
-                .catch(function (error) {
-                    console.error("Error writing document: ", error);
-                });
-        }
+        db.collection("applications").doc(currentUser.uid).set({
+            ["Experience:" + historyItem]: workHistory
+        }, { merge: true })
+            .then(function () {
+                console.log("Document successfully written!")
+            })
+            .catch(function (error) {
+                console.error("Error writing document: ", error)
+            });
     }
 
 

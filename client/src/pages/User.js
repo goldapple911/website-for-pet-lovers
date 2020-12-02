@@ -67,9 +67,9 @@ export default function User() {
                 console.log(querySnapshot)
                 querySnapshot.forEach((app) => {
                     console.log(app.data())
-                    if (app.data().position.toLowerCase().toString().includes(managerLocation.toLowerCase())) {
+                    // if (app.data().position.toLowerCase().toString().includes(managerLocation.toLowerCase())) {
                         applicationData.push(app.data())
-                    }
+                    // }
                     setApplications(applicationData)
                 })
             })
