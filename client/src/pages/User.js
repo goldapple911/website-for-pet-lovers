@@ -23,22 +23,16 @@ export default function User() {
     const [position, setPosition] = useState();
     const [isManager, setIsManager] = useState(false);
     const [managerLocation, setManagerLocation] = useState("");
-    const [applications, setApplications] = useState([])
-
-    const [info, setInfo] = useState({});
-    const [workHistory, setWorkHistory] = useState({});
-    const [questions, setQuestions] = useState({});
+    const [applications, setApplications] = useState([]);
+    const [fullApp, setFullApp] = useState(null)
 
     const fullApplication = (e) => {
-        console.log(e.target.id)
-        db.collection("applications")
-            .get()
-            .then((querySnapshot) => {
-                console.log(querySnapshot)
-                querySnapshot.forEach((app) => {
-                    console.log(app.data())
-                })
-            })
+        console.log("Target ID: ", e.target.id)
+        for (let i = 0; i < applications.length; i++) {
+            if (applications[i].uid === e.target.id) {
+                setFullApp(applications[i])
+            }
+        }
     }
 
     const [editUser, setEditUser] = useState(false);
@@ -68,11 +62,12 @@ export default function User() {
                 querySnapshot.forEach((app) => {
                     console.log(app.data())
                     // if (app.data().position.toLowerCase().toString().includes(managerLocation.toLowerCase())) {
-                        applicationData.push(app.data())
+                    applicationData.push(app.data())
                     // }
                     setApplications(applicationData)
                 })
             })
+
 
         // For loop to populate state with current job openings
         // Read all potential jobdata
@@ -139,16 +134,25 @@ export default function User() {
                             <section className="app-list mt-0 p-3 col-md-5">
                                 <h1 className="size-24 text-center app-header-border pb-3">Submitted Applications</h1>
                                 {applications.map((app, id) => (
-                                    <div className="app-list-item p-3 ml-auto mr-auto app-li-border" onClick={fullApplication} id={app.uid} key={id}>
-                                        <h2 className="size-20">{app.position}</h2>
-                                        <p className="size-20 m-0">{app.fname} {app.lname}</p>
-                                    </div>
-
+                                    <button className="w-100 clear-btn-style app-list-item p-3 ml-auto mr-auto app-li-border position-relative" onClick={fullApplication} id={app.uid} key={id}>
+                                        <h2 className="size-20" id={app.uid}>{app.position}</h2>
+                                        <p className="size-20 m-0" id={app.uid}>{app.fname} {app.lname}</p>
+                                    </button>
                                 ))}
                             </section>
-                            <section className="col-md-7 p-3 app-list">
+                            <section className="col-md-7 p-3 app-list position-relative">
                                 <h1 className="size-24 text-center app-header-border pb-3">Details</h1>
-                                <div>
+                                <div className="position-relative">
+                                    {fullApp ?
+                                        <>
+                                            <button className="position-absolute close-btn-manager" onClick={() => { setFullApp(null) }}>X</button>
+                                            <h2 className="size-20 text-center">{fullApp.position}</h2>
+                                            <p>Applicant Name: {fullApp.fname} {fullApp.lname}</p>
+                                            <p>Date of Birth: {fullApp.dob}</p>
+                                            <p>Email: {fullApp.email}</p>
+                                            <p>Phone: {fullApp.phone}</p>
+                                            <p>Avalable to start: {fullApp.start}</p>
+                                        </> : null}
 
                                 </div>
 

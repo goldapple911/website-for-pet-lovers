@@ -16,7 +16,7 @@ export default function AppQuestion({ qid, question, currentUser, db, position }
         // Storing applications by grouping application field data under the position and location applied for.
 
         db.collection("applications").doc(currentUser.uid).set({
-            ["Question:" + qid]: questionResponse
+            Questions: {[qid]: questionResponse}
         }, { merge: true })
             .then(function () {
                 console.log("Document successfully written!")

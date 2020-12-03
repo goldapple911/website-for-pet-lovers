@@ -244,3 +244,21 @@ opacity: 50%;
 .app-li-border:hover {
     border: unset;
 }
+
+.clear-btn-style {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.close-btn-manager {
+    position: absolute;
+    color: white;
+    z-index: 2;
+    right: 15px;
+    top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 3px;
+    background-color: rgb(41, 41, 41);
+}

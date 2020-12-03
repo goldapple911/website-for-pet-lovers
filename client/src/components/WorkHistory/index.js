@@ -52,7 +52,7 @@ export default function WorkHistory({ historyItem, db, currentUser, position }) 
         // Storing applications by grouping application field data under the position and location applied for.
 
         db.collection("applications").doc(currentUser.uid).set({
-            ["Experience:" + historyItem]: workHistory
+            Experience: {[historyItem]: workHistory}
         }, { merge: true })
             .then(function () {
                 console.log("Document successfully written!")
