@@ -158,15 +158,22 @@ export default function User() {
                                 <h1 className="size-24 text-center app-header-border pb-3 print-hide">Details</h1>
                                 <div className="position-relative">
                                     {fullApp ?
-                                        <>
+                                        <div className="container">
                                             <button className="position-absolute close-btn-manager print-hide" onClick={() => { setFullApp(null) }}>X</button>
                                             <h2 className="size-20 text-center">{fullApp.position}</h2>
-                                            <p className="app-info-display"><span className="app-info-bold">Applicant Name:</span> {fullApp.fname} {fullApp.lname}</p>
-                                            <p className="app-info-display"><span className="app-info-bold">Date of Birth:</span> {fullApp.dob}</p>
-                                            <p className="app-info-display"><span className="app-info-bold">Email:</span> {fullApp.email}</p>
-                                            <p className="app-info-display"><span className="app-info-bold">Phone:</span> {fullApp.phone}</p>
-                                            <p className="app-info-display"><span className="app-info-bold">Avalable to start:</span> {fullApp.start}</p>
-                                            <br />
+
+                                            <div className="row">
+                                                <div className="col-6">
+                                                    <p className="app-info-display"><span className="app-info-bold">Applicant Name:</span> {fullApp.fname} {fullApp.lname}</p>
+                                                    <p className="app-info-display"><span className="app-info-bold">Date of Birth:</span> {fullApp.dob}</p>
+                                                    <p className="app-info-display"><span className="app-info-bold">Avalable to start:</span> {fullApp.start}</p>
+                                                </div>
+                                                <div className="col-6">
+                                                    <p className="app-info-display"><span className="app-info-bold">Email:</span> {fullApp.email}</p>
+                                                    <p className="app-info-display"><span className="app-info-bold">Phone:</span> {fullApp.phone}</p>
+                                                </div>
+                                            </div>
+
                                             {workHistory.map((data, id) => (
                                                 <div key={id}>
                                                     <p className="app-info-bold text-center">Work History</p>
@@ -174,7 +181,7 @@ export default function User() {
                                                     <p className="app-info-display"><span className="app-info-bold">Dates:</span> {data.start} - {data.end}</p>
                                                     <p className="app-info-display"><span className="app-info-bold">Company:</span> {data.company}</p>
                                                     <p className="app-info-display"><span className="app-info-bold">Job Details:</span> {data.description}</p>
-                                                    <br/>
+                                                    <br />
                                                 </div>
                                             ))}
                                             <br />
@@ -187,7 +194,7 @@ export default function User() {
                                             ))}
 
 
-                                        </> : null}
+                                        </div> : null}
 
                                 </div>
 

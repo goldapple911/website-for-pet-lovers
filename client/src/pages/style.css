@@ -283,8 +283,7 @@ opacity: 50%;
     }
 
     .print-width {
-        border: 1px;
-        border-style: solid;
         margin-left: 20px;
+        margin-right: 20px;
     }
 }
