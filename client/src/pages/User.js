@@ -24,13 +24,27 @@ export default function User() {
     const [isManager, setIsManager] = useState(false);
     const [managerLocation, setManagerLocation] = useState("");
     const [applications, setApplications] = useState([]);
-    const [fullApp, setFullApp] = useState(null)
+    const [fullApp, setFullApp] = useState(null);
+    const [questions, setQuestions] = useState([]);
+    const [workHistory, setWorkHistory] = useState([]);
 
     const fullApplication = (e) => {
         console.log("Target ID: ", e.target.id)
         for (let i = 0; i < applications.length; i++) {
             if (applications[i].uid === e.target.id) {
+                let qAdd = [];
+                let hAdd = [];
                 setFullApp(applications[i])
+                console.log(applications[i].Questions)
+                for (const [key, value] of Object.entries(applications[i].Questions)) {
+                    qAdd.push(value);
+                    console.log(`${value.question}: ${value.response}`);
+                }
+                setQuestions(qAdd)
+                for (const [key, value] of Object.entries(applications[i].Experience)) {
+                    hAdd.push(value);
+                }
+                setWorkHistory(hAdd)
             }
         }
     }
@@ -122,7 +136,7 @@ export default function User() {
                 <div className="col-md-12 job-section user-page">
                     <div className="job-section-overlay"></div>
                     <div className="row">
-                        <div className="col-md-12 text-center job-header">
+                        <div className="col-md-12 text-center print-hide">
                             <button className="btn btn-light btn-filter sign-out" onClick={() => app.auth().signOut()}>Sign Out</button>
                             <button className="btn btn-light btn-filter edit" onClick={() => { if (editUser) { setEditUser(false) } else { setEditUser(true) } }} >Account</button>
                         </div>
@@ -131,7 +145,7 @@ export default function User() {
                     {/* Conditional statement to return back end user page to view submitted applications if user is on the manager list */}
                     {isManager ?
                         <div className="row position-relative">
-                            <section className="app-list mt-0 p-3 col-md-5">
+                            <section className="print-hide app-list mt-0 p-3 col-md-5">
                                 <h1 className="size-24 text-center app-header-border pb-3">Submitted Applications</h1>
                                 {applications.map((app, id) => (
                                     <button className="w-100 clear-btn-style app-list-item p-3 ml-auto mr-auto app-li-border position-relative" onClick={fullApplication} id={app.uid} key={id}>
@@ -140,18 +154,39 @@ export default function User() {
                                     </button>
                                 ))}
                             </section>
-                            <section className="col-md-7 p-3 app-list position-relative">
-                                <h1 className="size-24 text-center app-header-border pb-3">Details</h1>
+                            <section className="col-md-7 p-3 app-list position-relative print-width">
+                                <h1 className="size-24 text-center app-header-border pb-3 print-hide">Details</h1>
                                 <div className="position-relative">
                                     {fullApp ?
                                         <>
-                                            <button className="position-absolute close-btn-manager" onClick={() => { setFullApp(null) }}>X</button>
+                                            <button className="position-absolute close-btn-manager print-hide" onClick={() => { setFullApp(null) }}>X</button>
                                             <h2 className="size-20 text-center">{fullApp.position}</h2>
-                                            <p>Applicant Name: {fullApp.fname} {fullApp.lname}</p>
-                                            <p>Date of Birth: {fullApp.dob}</p>
-                                            <p>Email: {fullApp.email}</p>
-                                            <p>Phone: {fullApp.phone}</p>
-                                            <p>Avalable to start: {fullApp.start}</p>
+                                            <p className="app-info-display"><span className="app-info-bold">Applicant Name:</span> {fullApp.fname} {fullApp.lname}</p>
+                                            <p className="app-info-display"><span className="app-info-bold">Date of Birth:</span> {fullApp.dob}</p>
+                                            <p className="app-info-display"><span className="app-info-bold">Email:</span> {fullApp.email}</p>
+                                            <p className="app-info-display"><span className="app-info-bold">Phone:</span> {fullApp.phone}</p>
+                                            <p className="app-info-display"><span className="app-info-bold">Avalable to start:</span> {fullApp.start}</p>
+                                            <br />
+                                            {workHistory.map((data, id) => (
+                                                <div key={id}>
+                                                    <p className="app-info-bold text-center">Work History</p>
+                                                    <p className="app-info-display"><span className="app-info-bold">Title:</span> {data.title}</p>
+                                                    <p className="app-info-display"><span className="app-info-bold">Dates:</span> {data.start} - {data.end}</p>
+                                                    <p className="app-info-display"><span className="app-info-bold">Company:</span> {data.company}</p>
+                                                    <p className="app-info-display"><span className="app-info-bold">Job Details:</span> {data.description}</p>
+                                                    <br/>
+                                                </div>
+                                            ))}
+                                            <br />
+                                            <p className="app-info-bold text-center">Application Questions</p>
+                                            {questions.map((question, id) => (
+                                                <div key={id}>
+                                                    <p className="app-info-display"><span className="app-info-bold">{question.question}</span></p>
+                                                    <p>{question.response}</p>
+                                                </div>
+                                            ))}
+
+
                                         </> : null}
 
                                 </div>

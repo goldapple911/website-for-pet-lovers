@@ -9,7 +9,7 @@ function NavTabs() {
     const location = useLocation();
 
     return (
-        <nav>
+        <nav className="print-hide">
             <div className="nav-background">
                 <div className="nav nav-links nav-wrapper">
                     <div className="col-md-4">

@@ -262,3 +262,29 @@ opacity: 50%;
     border-radius: 3px;
     background-color: rgb(41, 41, 41);
 }
+
+.app-info-display {
+    margin: 0px;
+}
+
+.app-info-bold {
+    font-weight: bold;
+}
+
+@media print {
+    body {
+        margin: 0;
+        color: #000;
+        background-color: #fff;
+    }
+
+    .print-hide {
+        display: none;
+    }
+
+    .print-width {
+        border: 1px;
+        border-style: solid;
+        margin-left: 20px;
+    }
+}
