@@ -60,6 +60,10 @@ label {
     background-color: rgb(41, 41, 41);
 }
 
+.button:hover {
+    background-color: rgb(165, 165, 165);
+}
+
 .row-overlay {
     position: absolute;
     top: 0;
