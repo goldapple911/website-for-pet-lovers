@@ -6,7 +6,7 @@ import { ClientContext } from "../utils/ClientContext";
 import Background from '../components/Background';
 import CategoryJumbotron from '../components/CategoryJumbotron';
 import "./style.css"
-import { v4 as uuidv4 } from 'uuid';
+import CategoryNav from "../components/CategoryNav"
 
 export default function ShopByCategory() {
     let history = useHistory();
@@ -16,9 +16,10 @@ export default function ShopByCategory() {
     const [description, setDescription] = useState(["Local Description Unset"]);
     const { clientState } = useContext(ClientContext);
     const [shopOnlineURL, setShopOnlineURL] = useState("")
+    const dataset = websiteData.petCategories
+
 
     useEffect(() => {
-        const dataset = websiteData.petCategories
         for (let i = 0; i < dataset.length; i++) {
             if (dataset[i].category === clientState.category) {
                 setLink(dataset[i].link);
@@ -30,12 +31,25 @@ export default function ShopByCategory() {
         }
     }, [clientState.category])
 
+    const toggleCategory = (e) => {
+        for (let i = 0; i < dataset.length; i++) {
+            if (dataset[i].category === e.target.value) {
+                setLink(dataset[i].link);
+                setCategory(dataset[i].category);
+                setTitle(dataset[i].categoryTitle);
+                setDescription(dataset[i].description);
+                setShopOnlineURL(dataset[i].onlineShopURL)
+            }
+        }
+    }
+
     if (clientState.category === "Category State Unset") {
         history.push('/')
     }
 
     return (
         <main className="hide-overflow top">
+            <CategoryNav toggleCategory={toggleCategory} />
             <Background />
             <div className="row">
                 <div className="col-lg-4 d-none d-lg-block single-card">
