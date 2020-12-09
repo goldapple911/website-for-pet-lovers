@@ -180,17 +180,6 @@ opacity: 50%;
 }
 
 /* User Page */
-.sign-out {
- position: absolute;
- right: 25px;
- top: 0px;
-}
-
-.edit {
-    position: absolute;
-    left: 25px;
-    top: 0px;
-}
 
 .user-page {
     position: relative;

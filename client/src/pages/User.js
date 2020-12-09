@@ -27,6 +27,9 @@ export default function User() {
     const [fullApp, setFullApp] = useState(null);
     const [questions, setQuestions] = useState([]);
     const [workHistory, setWorkHistory] = useState([]);
+    const [editUser, setEditUser] = useState(false);
+    const [applicationView, setApplicationView] = useState(false);
+    const [appButton, setAppButton] = useState("View Applications")
 
     const fullApplication = (e) => {
         console.log("Target ID: ", e.target.id)
@@ -49,7 +52,15 @@ export default function User() {
         }
     }
 
-    const [editUser, setEditUser] = useState(false);
+    const toggleViewApplications = () => {
+        if (applicationView) {
+            setApplicationView(false)
+            setAppButton("View Applications")
+        } else if (!applicationView) {
+            setApplicationView(true)
+            setAppButton("Hide Applications")
+        }
+    }
 
     useEffect(() => {
 
@@ -69,18 +80,18 @@ export default function User() {
                 })
             })
 
-        db.collection("applications")
-            .get()
-            .then((querySnapshot) => {
-                console.log(querySnapshot)
-                querySnapshot.forEach((app) => {
-                    console.log(app.data())
-                    // if (app.data().position.toLowerCase().toString().includes(managerLocation.toLowerCase())) {
-                    applicationData.push(app.data())
-                    // }
-                    setApplications(applicationData)
-                })
-            })
+        // db.collection("applications")
+        //     .get()
+        //     .then((querySnapshot) => {
+        //         console.log(querySnapshot)
+        //         querySnapshot.forEach((app) => {
+        //             console.log(app.data())
+        //             if (app.data().position.toLowerCase().toString().includes(managerLocation.toLowerCase())) {
+        //                 applicationData.push(app.data())
+        //             }
+        //             setApplications(applicationData)
+        //         })
+        //     })
 
 
         // For loop to populate state with current job openings
@@ -110,6 +121,23 @@ export default function User() {
         setJobs(currentPositions)
     }, [])
 
+    const pullApplications = () => {
+        db.collection("applications")
+            .get()
+            .then((querySnapshot) => {
+                console.log(querySnapshot)
+                querySnapshot.forEach((app) => {
+                    console.log(app.data())
+                    if (app.data().position.toLowerCase().toString().includes(managerLocation.toLowerCase())) {
+                        applicationData.push(app.data())
+                    } else if (managerLocation === "All") {
+                        applicationData.push(app.data())
+                    }
+                    setApplications(applicationData)
+                })
+            })
+    }
+
     const [jobState, setJobState] = useState({
         all: [],
         Blaine: [],
@@ -137,13 +165,22 @@ export default function User() {
                     <div className="job-section-overlay"></div>
                     <div className="row">
                         <div className="col-md-12 text-center print-hide">
-                            <button className="btn btn-light btn-filter sign-out" onClick={() => app.auth().signOut()}>Sign Out</button>
-                            <button className="btn btn-light btn-filter edit" onClick={() => { if (editUser) { setEditUser(false) } else { setEditUser(true) } }} >Account</button>
+                            <div className="row top">
+                                <div className="col-4">
+                                    <button className="btn btn-light btn-filter" onClick={() => app.auth().signOut()}>Sign Out</button>
+                                </div>
+                                <div className="col-4">
+                                    {isManager ? <button className="btn btn-light btn-filter" onClick={() => {toggleViewApplications(); pullApplications()}}>{appButton}</button> : null}
+                                </div>
+                                <div className="col-4">
+                                    {/* <button className="btn btn-light btn-filter" onClick={() => { if (editUser) { setEditUser(false) } else { setEditUser(true) } }} >Account</button> */}
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     {/* Conditional statement to return back end user page to view submitted applications if user is on the manager list */}
-                    {isManager ?
+                    {applicationView ?
                         <div className="row position-relative">
                             <section className="print-hide app-list mt-0 p-3 col-md-5">
                                 <h1 className="size-24 text-center app-header-border pb-3">Submitted Applications</h1>
@@ -201,30 +238,34 @@ export default function User() {
                             </section>
 
                         </div>
-                        :
+                        : null}
 
-                        <>
-                            {/* Conditional statement to return the application form or open position search based on state changes */}
-                            {apply ? <Application position={position} currentUser={currentUser} setApply={setApply} /> :
-                                <div className="col-md-12 text-center">
-                                    <button type="button" className="btn btn-light btn-filter" onClick={handleLocationChange} value="all">All Locations</button>
-                                    <button type="button" className="btn btn-light btn-filter" onClick={handleLocationChange} value="Blaine">Blaine</button>
-                                    <button type="button" className="btn btn-light btn-filter" onClick={handleLocationChange} value="Stillwater">Stillwater</button>
+                    <>
+                        {/* Conditional statement to return the application form or open position search based on state changes */}
+                        {!applicationView ?
+                            <>
+                                {apply ? <Application position={position} currentUser={currentUser} setApply={setApply} /> :
+                                    <div className="col-md-12 text-center">
+                                        <button type="button" className="btn btn-light btn-filter" onClick={handleLocationChange} value="all">All Locations</button>
+                                        <button type="button" className="btn btn-light btn-filter" onClick={handleLocationChange} value="Blaine">Blaine</button>
+                                        <button type="button" className="btn btn-light btn-filter" onClick={handleLocationChange} value="Stillwater">Stillwater</button>
 
-                                    <div className="row">
-                                        {jobs.map((job) => (
-                                            <div className="col-lg-3 col-md-4 col-sm-6" key={job.id}>
-                                                <JobCard
-                                                    job={job}
-                                                />
-                                                <div className="job-overlay" onClick={(e) => { setApply(true); setPosition(e.target.id) }} id={job.title + ": " + job.location}></div>
-                                            </div>
-                                        ))}
+                                        <div className="row">
+                                            {jobs.map((job) => (
+                                                <div className="col-lg-3 col-md-4 col-sm-6" key={job.id}>
+                                                    <JobCard
+                                                        job={job}
+                                                    />
+                                                    <div className="job-overlay" onClick={(e) => { setApply(true); setPosition(e.target.id) }} id={job.title + ": " + job.location}></div>
+                                                </div>
+                                            ))}
+                                        </div>
                                     </div>
-                                </div>
-                            }
-                        </>
-                    }
+                                }
+                            </>
+                            : null}
+
+                    </>
 
 
                 </div>
