@@ -273,14 +273,20 @@ opacity: 50%;
 
 .category-nav-btn {
     border: none;
-    padding: 5px;
+    padding: 7px;
     font-weight: 600;
 }
 
 .category-nav-btn:hover {
     background-color: rgb(41, 41, 41);
     color: white;
-    padding: 5px;
+    font-weight: bold;
+}
+
+.category-nav-btn:focus {
+    outline: none;
+    background-color: rgb(41, 41, 41);
+    color: white;
     font-weight: bold;
 }
 

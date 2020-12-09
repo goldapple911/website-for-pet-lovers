@@ -16,7 +16,7 @@ export default function Home() {
             <BackgroundVid src={dogvid} />
             <HomeJumbotron />
 
-            <div className="row">
+            <div className="row mr-2 ml-2">
                 {dataset.map((data) => (
                     <div className="col-md-2" key={data.id}>
                     <CardCategory
