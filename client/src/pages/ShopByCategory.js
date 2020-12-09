@@ -16,7 +16,7 @@ export default function ShopByCategory() {
     const [description, setDescription] = useState(["Local Description Unset"]);
     const { clientState } = useContext(ClientContext);
     const [shopOnlineURL, setShopOnlineURL] = useState("")
-    const dataset = websiteData.petCategories
+    const dataset = websiteData.petCategories;
 
 
     useEffect(() => {
@@ -51,20 +51,9 @@ export default function ShopByCategory() {
         <main className="hide-overflow top">
             <CategoryNav toggleCategory={toggleCategory} />
             <Background />
-            <div className="row">
-                <div className="col-lg-4 d-none d-lg-block single-card">
-                    <CardSingle
-                        src={link}
-                        alt={category}
-                    />
-                </div>
-                <div className="col-lg-8 col-md-12 single-card p-2">
-                    <CategoryJumbotron
-                        title={title}
-                        description={description}
-                        shopOnlineURL={shopOnlineURL}
-                    />
-                </div>
+            <div className="row category-height">
+                <CardSingle src={link} alt={category} />
+                <CategoryJumbotron title={title} description={description} shopOnlineURL={shopOnlineURL} />
             </div>
         </main>
     )

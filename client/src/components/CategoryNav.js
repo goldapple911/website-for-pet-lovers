@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function CategoryNav({ toggleCategory }) {
     return (
-        <div className="row">
+        <div className="row category-nav">
             <button onClick={toggleCategory} className="category-nav-btn col-sm-2 col-4" value="Dog">Dog</button>
             <button onClick={toggleCategory} className="category-nav-btn col-sm-2 col-4" value="Cat">Cat</button>
             <button onClick={toggleCategory} className="category-nav-btn col-sm-2 col-4" value="Small Mammal">Small Mammal</button>
