@@ -243,6 +243,20 @@ opacity: 50%;
     border-right: none;
 }
 
+.no-match {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    color: rgb(231, 78, 78);
+    font-weight: bold;
+    animation: no-match 2s;
+}
+
+@keyframes no-match {
+    0% {opacity: 0%;}
+    10% {opacity: 100%}
+}
+
 .close-btn-manager {
     position: absolute;
     color: white;

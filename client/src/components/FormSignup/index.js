@@ -19,10 +19,9 @@ function FormSignup({ toggleForm, history }) {
     // Function to sign up user via firebase.
     const handleSignUp =
         async event => {
-            const { password, retypePassword } = formData
-            if (password !== retypePassword) {
-                alert("Your passwords do not match")
-                return
+            const { password, retypePassword, email } = formData
+            if (password !== retypePassword || email === "") {
+
             }
 
             event.preventDefault();
@@ -30,7 +29,7 @@ function FormSignup({ toggleForm, history }) {
                 await fbApp
                     .auth()
                     .createUserWithEmailAndPassword(formData.email, formData.password);
-                
+
                 history.push('/User-Page');
             }
             catch (error) {
@@ -78,7 +77,10 @@ function FormSignup({ toggleForm, history }) {
                 ></input>
 
                 {/* Password input */}
-                <label htmlFor="password">Password</label>
+                <div className="position-relative">
+                    <label htmlFor="password">Password</label>
+                    <label className={formData.password.length < 8 && formData.password.length > 0 ? "no-match" : "d-none"} htmlFor="password">Must be at least 8 characters!</label>
+                </div>
                 <input
                     className="inputs"
                     type="password"
@@ -89,7 +91,10 @@ function FormSignup({ toggleForm, history }) {
                 ></input>
 
                 {/* Password Confirmation input */}
-                <label htmlFor="password">Retype Password</label>
+                <div className="position-relative">
+                    <label htmlFor="password">Retype Password</label>
+                    <label className={formData.password !== formData.retypePassword && formData.retypePassword.length > 0 ? "no-match" : "d-none"} htmlFor="password">Passwords must match!</label>
+                </div>
                 <input
                     className="inputs"
                     type="password"
