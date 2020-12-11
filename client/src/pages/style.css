@@ -362,3 +362,9 @@ pre {
         margin-right: 20px;
     }
 }
+
+@media only screen and (max-width:950px) {
+    .job-section {
+        display: none;
+    }
+  }
