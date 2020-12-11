@@ -137,7 +137,7 @@ export default function User() {
                     setApplications(applicationData)
                 })
                 if (applicationData.length === 0) {
-                    setApplications([{position: "No new applications!"}])
+                    setApplications([{ position: "No new applications!" }])
                 }
             })
     }
@@ -163,17 +163,17 @@ export default function User() {
     const deleteApplication = () => {
         console.log(fullApp)
         db.collection("deleted-applications").doc(`${fullApp.uid}`).set(fullApp)
-        .then(function() {
-            db.collection("applications").doc(`${fullApp.uid}`).delete()
-            .then(function() {
-                console.log("Document deleted!");
-                setFullApp(null);
-                pullApplications();
+            .then(function () {
+                db.collection("applications").doc(`${fullApp.uid}`).delete()
+                    .then(function () {
+                        console.log("Document deleted!");
+                        setFullApp(null);
+                        pullApplications();
+                    });
+            })
+            .catch(function (error) {
+                console.error("Error writing/deleting document: ", error);
             });
-        })
-        .catch(function(error) {
-            console.error("Error writing/deleting document: ", error);
-        });
     }
 
     // console.log(managerList)
@@ -190,7 +190,7 @@ export default function User() {
                                     <button className="btn btn-light btn-filter" onClick={() => app.auth().signOut()}>Sign Out</button>
                                 </div>
                                 <div className="col-4">
-                                    {isManager ? <button className="btn btn-light btn-filter" onClick={() => {toggleViewApplications(); pullApplications()}}>{appButton}</button> : null}
+                                    {isManager ? <button className="btn btn-light btn-filter" onClick={() => { toggleViewApplications(); pullApplications() }}>{appButton}</button> : null}
                                 </div>
                                 <div className="col-4">
                                     {/* <button className="btn btn-light btn-filter" onClick={() => { if (editUser) { setEditUser(false) } else { setEditUser(true) } }} >Account</button> */}
@@ -232,13 +232,13 @@ export default function User() {
                                                 </div>
                                             </div>
 
+                                            <p className="app-info-bold text-center">Work History</p>
                                             {workHistory.map((data, id) => (
                                                 <div key={id}>
-                                                    <p className="app-info-bold text-center">Work History</p>
                                                     <p className="app-info-display"><span className="app-info-bold">Title:</span> {data.title}</p>
                                                     <p className="app-info-display"><span className="app-info-bold">Dates:</span> {data.start} - {data.end}</p>
                                                     <p className="app-info-display"><span className="app-info-bold">Company:</span> {data.company}</p>
-                                                    <p className="app-info-display"><span className="app-info-bold">Job Details:</span> {data.description}</p>
+                                                    <pre className="app-info-display">{data.description}</pre>
                                                     <br />
                                                 </div>
                                             ))}
@@ -247,7 +247,7 @@ export default function User() {
                                             {questions.map((question, id) => (
                                                 <div key={id}>
                                                     <p className="app-info-display"><span className="app-info-bold">{question.question}</span></p>
-                                                    <p>{question.response}</p>
+                                                    <pre>{question.response}</pre>
                                                 </div>
                                             ))}
 
