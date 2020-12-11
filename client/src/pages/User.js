@@ -7,6 +7,7 @@ import app from '../utils/firebase';
 import Application from '../components/Application'
 import { AuthContext } from '../utils/AuthContext';
 import firebase from 'firebase/app';
+import trash from "../utils/Assets/trash.png";
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 
@@ -125,16 +126,19 @@ export default function User() {
         db.collection("applications")
             .get()
             .then((querySnapshot) => {
-                console.log(querySnapshot)
                 querySnapshot.forEach((app) => {
                     console.log(app.data())
                     if (app.data().position.toLowerCase().toString().includes(managerLocation.toLowerCase())) {
                         applicationData.push(app.data())
                     } else if (managerLocation === "All") {
                         applicationData.push(app.data())
+                        console.log(applicationData)
                     }
                     setApplications(applicationData)
                 })
+                if (applicationData.length === 0) {
+                    setApplications([{position: "No new applications!"}])
+                }
             })
     }
 
@@ -154,6 +158,22 @@ export default function User() {
         } else {
             setJobs(jobState.all)
         }
+    }
+
+    const deleteApplication = () => {
+        console.log(fullApp)
+        db.collection("deleted-applications").doc(`${fullApp.uid}`).set(fullApp)
+        .then(function() {
+            db.collection("applications").doc(`${fullApp.uid}`).delete()
+            .then(function() {
+                console.log("Document deleted!");
+                setFullApp(null);
+                pullApplications();
+            });
+        })
+        .catch(function(error) {
+            console.error("Error writing/deleting document: ", error);
+        });
     }
 
     // console.log(managerList)
@@ -196,7 +216,8 @@ export default function User() {
                                 <div className="position-relative">
                                     {fullApp ?
                                         <div className="container">
-                                            <button className="position-absolute close-btn-manager print-hide" onClick={() => { setFullApp(null) }}>X</button>
+                                            <button className="position-absolute close-btn-manager print-hide button-size" onClick={() => { setFullApp(null) }}>X</button>
+                                            <button className="position-absolute delete-btn-manager print-hide button-size" onClick={deleteApplication}><img src={trash} alt="logo" className="trash-icon" /></button>
                                             <h2 className="size-20 text-center">{fullApp.position}</h2>
 
                                             <div className="row">

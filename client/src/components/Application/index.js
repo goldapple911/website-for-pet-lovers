@@ -76,6 +76,7 @@ export default function Application({ position, setApply, currentUser }) {
         }, { merge: true })
             .then(function () {
                 console.log("Document successfully written!");
+                setApply(false)
             })
             .catch(function (error) {
                 console.error("Error writing document: ", error);
@@ -117,7 +118,7 @@ export default function Application({ position, setApply, currentUser }) {
                     {/* Phone */}
                     <div className="col-md-4 input-area">
                         <label className="app-label">Phone</label>
-                        <input  onChange={handlePhoneChange} type="tel" id="tel" name="tel" className="riser app-input"></input>
+                        <input onChange={handlePhoneChange} type="tel" id="tel" name="tel" className="riser app-input"></input>
                     </div>
 
                     {/* Email */}
