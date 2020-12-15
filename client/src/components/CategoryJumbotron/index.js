@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "react-router-dom"
 import "./categoryJumbotron.css";
 import { v4 as uuidv4 } from 'uuid';
 
@@ -20,10 +19,10 @@ function CategoryJumbotron({ title, description, shopOnlineURL }) {
                 </div>
                 <div className="row button-row">
                     <div className="col-md-6 txt-center product-btn">
-                        <a href="https://www.pointy.com/chains/atlas_pet_supply" target="_blank"><button className="button">Search Products</button></a>
+                        <a href="https://www.pointy.com/chains/atlas_pet_supply" target="_blank" rel="noopener noreferrer"><button className="button">Search Products</button></a>
                     </div>
                     <div className="col-md-6 txt-center product-btn">
-                        <a href={shopOnlineURL} target="_blank"><button className="button">Shop Online</button></a>
+                        <a href={shopOnlineURL} target="_blank" rel="noopener noreferrer"><button className="button">Shop Online</button></a>
                     </div>
                 </div>
             </div>

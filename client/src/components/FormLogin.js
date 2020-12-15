@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Redirect } from 'react-router';
-import app from '../../utils/firebase';
-import { AuthContext } from '../../utils/AuthContext'
+import app from '../utils/firebase';
+import { AuthContext } from '../utils/AuthContext'
 
 function FormLogin({ toggleForm }) {
     const [formData, setFormData] = useState({

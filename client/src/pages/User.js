@@ -8,8 +8,6 @@ import Application from '../components/Application'
 import { AuthContext } from '../utils/AuthContext';
 import firebase from 'firebase/app';
 import trash from "../utils/Assets/trash.png";
-import { useCollectionData } from 'react-firebase-hooks/firestore';
-
 
 export default function User() {
     let currentPositions = [];
@@ -28,7 +26,7 @@ export default function User() {
     const [fullApp, setFullApp] = useState(null);
     const [questions, setQuestions] = useState([]);
     const [workHistory, setWorkHistory] = useState([]);
-    const [editUser, setEditUser] = useState(false);
+    // const [editUser, setEditUser] = useState(false);
     const [applicationView, setApplicationView] = useState(false);
     const [appButton, setAppButton] = useState("View Applications")
 
@@ -80,20 +78,6 @@ export default function User() {
                     }
                 })
             })
-
-        // db.collection("applications")
-        //     .get()
-        //     .then((querySnapshot) => {
-        //         console.log(querySnapshot)
-        //         querySnapshot.forEach((app) => {
-        //             console.log(app.data())
-        //             if (app.data().position.toLowerCase().toString().includes(managerLocation.toLowerCase())) {
-        //                 applicationData.push(app.data())
-        //             }
-        //             setApplications(applicationData)
-        //         })
-        //     })
-
 
         // For loop to populate state with current job openings
         // Read all potential jobdata

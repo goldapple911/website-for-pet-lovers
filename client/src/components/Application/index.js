@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import WorkHistory from '../WorkHistory'
-import AppQuestion from '../AppQuestion'
+import AppQuestion from '../AppQuestion.js'
 import ApplicationContent from '../../utils/ApplicationContent'
 import "./application.css"
 import app from '../../utils/firebase';

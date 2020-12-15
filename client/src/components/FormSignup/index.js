@@ -37,16 +37,6 @@ function FormSignup({ toggleForm, history }) {
             }
         };
 
-    function handleNameChange(e) {
-        console.log(formData)
-        setFormData({ ...formData, name: e.target.value })
-    };
-
-    function handlePhoneChange(e) {
-        console.log(formData)
-        setFormData({ ...formData, phone: e.target.value })
-    };
-
     function handleEmailChange(e) {
         setFormData({ ...formData, email: e.target.value })
     };
