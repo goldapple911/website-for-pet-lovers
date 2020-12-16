@@ -3,8 +3,6 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const nodemailer = require('nodemailer')
 require('dotenv').config();
-// const mongoose = require("mongoose");
-// const routes = require("./routes");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -20,12 +18,7 @@ app.get('/*', function (req, res) {
   res.redirect('/')
 });
 
-// Haven't created a database to connect yet 
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
-
 // CONNECTION NOT YET TESTED
-
-// app.use(routes);
 
 // Nodemailer config to handle contact form submit.
 let transporter = nodemailer.createTransport({
@@ -51,7 +44,7 @@ app.post('/send', (req, res, next) => {
 
   transporter.sendMail(mailOptions, function (err, data) {
     if (err) {
-      console.log('Error')
+      console.log('Error: ', err)
     } else {
       console.log('Email Sent')
     }
