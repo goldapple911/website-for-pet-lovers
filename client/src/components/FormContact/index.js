@@ -17,6 +17,9 @@ function ContactForm() {
             console.log(res)
             console.log(res.data)
         })
+        .catch(err => {
+            console.log(err)
+        })
     };
 
     function handleNameChange(e) {
