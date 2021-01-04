@@ -11,7 +11,7 @@ function ContactForm() {
 
     function sendEmail(e) {
         e.preventDefault();
-        axios.post("https://damp-dusk-22863.herokuapp.com/send", formData)
+        axios.post("https://damp-dusk-22863.herokuapp.com/contact/send", formData)
         .then(res => {
             console.log(res)
             console.log(res.data)
