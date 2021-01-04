@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-// import axios from "axios";
+import axios from "axios";
 import "../../pages/style.css";
 
 function ContactForm() {
-    const axios = require("axios")
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -12,7 +11,7 @@ function ContactForm() {
 
     function sendEmail(e) {
         e.preventDefault();
-        axios.post("/send", formData)
+        axios.post("https://damp-dusk-22863.herokuapp.com/send", formData)
         .then(res => {
             console.log(res)
             console.log(res.data)
